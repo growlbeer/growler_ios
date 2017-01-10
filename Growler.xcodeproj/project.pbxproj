@@ -11,6 +11,7 @@
 		4D464D371E25873800443D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D464D361E25873800443D3B /* Assets.xcassets */; };
 		4D464D3A1E25873800443D3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D464D381E25873800443D3B /* LaunchScreen.storyboard */; };
 		4D464D451E25873900443D3B /* GrowlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D441E25873900443D3B /* GrowlerTests.swift */; };
+		4D464D571E258CF200443D3B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D561E258CF200443D3B /* Configuration.swift */; };
 		719222E4C276BF11ABAB8F8A /* Pods_Growler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		4D464D401E25873900443D3B /* GrowlerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowlerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D464D441E25873900443D3B /* GrowlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowlerTests.swift; sourceTree = "<group>"; };
 		4D464D461E25873900443D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D464D561E258CF200443D3B /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Utilities/Configuration.swift; sourceTree = "<group>"; };
 		59281B937F90CEED6D5995AB /* Pods-Growler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Growler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Growler/Pods-Growler.debug.xcconfig"; sourceTree = "<group>"; };
 		C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Growler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E67163784B7D09A3C51E99C5 /* Pods-Growler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Growler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Growler/Pods-Growler.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		4D464D551E258BCC00443D3B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4D464D561E258CF200443D3B /* Configuration.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D464D571E258CF200443D3B /* Configuration.swift in Sources */,
 				4D464D301E25873800443D3B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
