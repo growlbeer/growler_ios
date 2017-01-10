@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D464D301E25873800443D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D2F1E25873800443D3B /* AppDelegate.swift */; };
+		4D464D371E25873800443D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D464D361E25873800443D3B /* Assets.xcassets */; };
+		4D464D3A1E25873800443D3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D464D381E25873800443D3B /* LaunchScreen.storyboard */; };
+		4D464D451E25873900443D3B /* GrowlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D441E25873900443D3B /* GrowlerTests.swift */; };
+		719222E4C276BF11ABAB8F8A /* Pods_Growler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4D464D411E25873900443D3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D464D241E25873800443D3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D464D2B1E25873800443D3B;
+			remoteInfo = Growler;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4D464D2C1E25873800443D3B /* Growler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Growler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D464D2F1E25873800443D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4D464D361E25873800443D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D464D391E25873800443D3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4D464D3B1E25873800443D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D464D401E25873900443D3B /* GrowlerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowlerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D464D441E25873900443D3B /* GrowlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowlerTests.swift; sourceTree = "<group>"; };
+		4D464D461E25873900443D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59281B937F90CEED6D5995AB /* Pods-Growler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Growler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Growler/Pods-Growler.debug.xcconfig"; sourceTree = "<group>"; };
+		C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Growler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E67163784B7D09A3C51E99C5 /* Pods-Growler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Growler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Growler/Pods-Growler.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D464D291E25873800443D3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				719222E4C276BF11ABAB8F8A /* Pods_Growler.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D464D3D1E25873900443D3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		147CEFA0A4085D1DB475A8E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D464D231E25873800443D3B = {
+			isa = PBXGroup;
+			children = (
+				4D464D2E1E25873800443D3B /* Growler */,
+				4D464D431E25873900443D3B /* GrowlerTests */,
+				4D464D2D1E25873800443D3B /* Products */,
+				ED0B0FEE7E49B55D2E22E457 /* Pods */,
+				147CEFA0A4085D1DB475A8E3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4D464D2D1E25873800443D3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D464D2C1E25873800443D3B /* Growler.app */,
+				4D464D401E25873900443D3B /* GrowlerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D464D2E1E25873800443D3B /* Growler */ = {
+			isa = PBXGroup;
+			children = (
+				4D464D2F1E25873800443D3B /* AppDelegate.swift */,
+				4D464D361E25873800443D3B /* Assets.xcassets */,
+				4D464D381E25873800443D3B /* LaunchScreen.storyboard */,
+				4D464D3B1E25873800443D3B /* Info.plist */,
+			);
+			path = Growler;
+			sourceTree = "<group>";
+		};
+		4D464D431E25873900443D3B /* GrowlerTests */ = {
+			isa = PBXGroup;
+			children = (
+				4D464D441E25873900443D3B /* GrowlerTests.swift */,
+				4D464D461E25873900443D3B /* Info.plist */,
+			);
+			path = GrowlerTests;
+			sourceTree = "<group>";
+		};
+		ED0B0FEE7E49B55D2E22E457 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59281B937F90CEED6D5995AB /* Pods-Growler.debug.xcconfig */,
+				E67163784B7D09A3C51E99C5 /* Pods-Growler.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D464D2B1E25873800443D3B /* Growler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D464D491E25873900443D3B /* Build configuration list for PBXNativeTarget "Growler" */;
+			buildPhases = (
+				ECE6EE5633AACFB510252798 /* [CP] Check Pods Manifest.lock */,
+				4D464D281E25873800443D3B /* Sources */,
+				4D464D291E25873800443D3B /* Frameworks */,
+				4D464D2A1E25873800443D3B /* Resources */,
+				99EA030C26E71CBB63B2A447 /* [CP] Embed Pods Frameworks */,
+				42BE3BDA3B247040FA785CB9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Growler;
+			productName = Growler;
+			productReference = 4D464D2C1E25873800443D3B /* Growler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4D464D3F1E25873900443D3B /* GrowlerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D464D4C1E25873900443D3B /* Build configuration list for PBXNativeTarget "GrowlerTests" */;
+			buildPhases = (
+				4D464D3C1E25873900443D3B /* Sources */,
+				4D464D3D1E25873900443D3B /* Frameworks */,
+				4D464D3E1E25873900443D3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D464D421E25873900443D3B /* PBXTargetDependency */,
+			);
+			name = GrowlerTests;
+			productName = GrowlerTests;
+			productReference = 4D464D401E25873900443D3B /* GrowlerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D464D241E25873800443D3B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Growler;
+				TargetAttributes = {
+					4D464D2B1E25873800443D3B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 726J23ESFP;
+						ProvisioningStyle = Automatic;
+					};
+					4D464D3F1E25873900443D3B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 726J23ESFP;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4D464D2B1E25873800443D3B;
+					};
+				};
+			};
+			buildConfigurationList = 4D464D271E25873800443D3B /* Build configuration list for PBXProject "Growler" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4D464D231E25873800443D3B;
+			productRefGroup = 4D464D2D1E25873800443D3B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D464D2B1E25873800443D3B /* Growler */,
+				4D464D3F1E25873900443D3B /* GrowlerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D464D2A1E25873800443D3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D464D3A1E25873800443D3B /* LaunchScreen.storyboard in Resources */,
+				4D464D371E25873800443D3B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D464D3E1E25873900443D3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		42BE3BDA3B247040FA785CB9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Growler/Pods-Growler-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99EA030C26E71CBB63B2A447 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Growler/Pods-Growler-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECE6EE5633AACFB510252798 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D464D281E25873800443D3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D464D301E25873800443D3B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D464D3C1E25873900443D3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D464D451E25873900443D3B /* GrowlerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4D464D421E25873900443D3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D464D2B1E25873800443D3B /* Growler */;
+			targetProxy = 4D464D411E25873900443D3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4D464D381E25873800443D3B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D464D391E25873800443D3B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D464D471E25873900443D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4D464D481E25873900443D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4D464D4A1E25873900443D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59281B937F90CEED6D5995AB /* Pods-Growler.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 726J23ESFP;
+				INFOPLIST_FILE = Growler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = beer.growl.Growler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4D464D4B1E25873900443D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E67163784B7D09A3C51E99C5 /* Pods-Growler.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 726J23ESFP;
+				INFOPLIST_FILE = Growler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = beer.growl.Growler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		4D464D4D1E25873900443D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 726J23ESFP;
+				INFOPLIST_FILE = GrowlerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = beer.growl.GrowlerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Growler.app/Growler";
+			};
+			name = Debug;
+		};
+		4D464D4E1E25873900443D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 726J23ESFP;
+				INFOPLIST_FILE = GrowlerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = beer.growl.GrowlerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Growler.app/Growler";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D464D271E25873800443D3B /* Build configuration list for PBXProject "Growler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D464D471E25873900443D3B /* Debug */,
+				4D464D481E25873900443D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D464D491E25873900443D3B /* Build configuration list for PBXNativeTarget "Growler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D464D4A1E25873900443D3B /* Debug */,
+				4D464D4B1E25873900443D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4D464D4C1E25873900443D3B /* Build configuration list for PBXNativeTarget "GrowlerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D464D4D1E25873900443D3B /* Debug */,
+				4D464D4E1E25873900443D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4D464D241E25873800443D3B /* Project object */;
+}
