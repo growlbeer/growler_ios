@@ -26,10 +26,10 @@
 
 /* Begin PBXFileReference section */
 		4D464D2C1E25873800443D3B /* Growler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Growler.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D464D2F1E25873800443D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4D464D361E25873800443D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D464D2F1E25873800443D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Supporting Files/AppDelegate.swift"; sourceTree = "<group>"; };
+		4D464D361E25873800443D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets/Assets.xcassets; sourceTree = "<group>"; };
 		4D464D391E25873800443D3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4D464D3B1E25873800443D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D464D3B1E25873800443D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
 		4D464D401E25873900443D3B /* GrowlerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowlerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D464D441E25873900443D3B /* GrowlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowlerTests.swift; sourceTree = "<group>"; };
 		4D464D461E25873900443D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,10 +88,13 @@
 		4D464D2E1E25873800443D3B /* Growler */ = {
 			isa = PBXGroup;
 			children = (
-				4D464D2F1E25873800443D3B /* AppDelegate.swift */,
-				4D464D361E25873800443D3B /* Assets.xcassets */,
-				4D464D381E25873800443D3B /* LaunchScreen.storyboard */,
-				4D464D3B1E25873800443D3B /* Info.plist */,
+				4D464D4F1E258BA200443D3B /* Assets */,
+				4D464D541E258BC400443D3B /* Supporting Files */,
+				4D464D551E258BCC00443D3B /* Utilities */,
+				4D464D521E258BB900443D3B /* Models */,
+				4D464D511E258BB300443D3B /* View Models */,
+				4D464D501E258BAA00443D3B /* Views */,
+				4D464D531E258BBD00443D3B /* Controllers */,
 			);
 			path = Growler;
 			sourceTree = "<group>";
@@ -103,6 +106,59 @@
 				4D464D461E25873900443D3B /* Info.plist */,
 			);
 			path = GrowlerTests;
+			sourceTree = "<group>";
+		};
+		4D464D4F1E258BA200443D3B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4D464D361E25873800443D3B /* Assets.xcassets */,
+				4D464D381E25873800443D3B /* LaunchScreen.storyboard */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		4D464D501E258BAA00443D3B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4D464D511E258BB300443D3B /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
+		4D464D521E258BB900443D3B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4D464D531E258BBD00443D3B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4D464D541E258BC400443D3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D464D2F1E25873800443D3B /* AppDelegate.swift */,
+				4D464D3B1E25873800443D3B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4D464D551E258BCC00443D3B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		ED0B0FEE7E49B55D2E22E457 /* Pods */ = {
@@ -473,6 +529,7 @@
 				4D464D4B1E25873900443D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D464D4C1E25873900443D3B /* Build configuration list for PBXNativeTarget "GrowlerTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +538,7 @@
 				4D464D4E1E25873900443D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
