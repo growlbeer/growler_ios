@@ -13,6 +13,11 @@
 		4D464D451E25873900443D3B /* GrowlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D441E25873900443D3B /* GrowlerTests.swift */; };
 		4D464D571E258CF200443D3B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D561E258CF200443D3B /* Configuration.swift */; };
 		4D464D591E25A1E300443D3B /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D581E25A1E300443D3B /* Style.swift */; };
+		4D464D5C1E2833EB00443D3B /* CellarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D5B1E2833EB00443D3B /* CellarViewController.swift */; };
+		4D464D5E1E28341B00443D3B /* TradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D5D1E28341B00443D3B /* TradesViewController.swift */; };
+		4D464D601E28342800443D3B /* BeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D5F1E28342800443D3B /* BeersViewController.swift */; };
+		4D464D621E28343700443D3B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D611E28343700443D3B /* ProfileViewController.swift */; };
+		4D464D641E2834ED00443D3B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D631E2834ED00443D3B /* TabBarController.swift */; };
 		719222E4C276BF11ABAB8F8A /* Pods_Growler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +42,11 @@
 		4D464D461E25873900443D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D464D561E258CF200443D3B /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Utilities/Configuration.swift; sourceTree = "<group>"; };
 		4D464D581E25A1E300443D3B /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Style.swift; path = Utilities/Style.swift; sourceTree = "<group>"; };
+		4D464D5B1E2833EB00443D3B /* CellarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellarViewController.swift; path = Controllers/Tabs/CellarViewController.swift; sourceTree = "<group>"; };
+		4D464D5D1E28341B00443D3B /* TradesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TradesViewController.swift; path = Controllers/Tabs/TradesViewController.swift; sourceTree = "<group>"; };
+		4D464D5F1E28342800443D3B /* BeersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeersViewController.swift; path = Controllers/Tabs/BeersViewController.swift; sourceTree = "<group>"; };
+		4D464D611E28343700443D3B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Controllers/Tabs/ProfileViewController.swift; sourceTree = "<group>"; };
+		4D464D631E2834ED00443D3B /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Controllers/Tabs/TabBarController.swift; sourceTree = "<group>"; };
 		59281B937F90CEED6D5995AB /* Pods-Growler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Growler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Growler/Pods-Growler.debug.xcconfig"; sourceTree = "<group>"; };
 		C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Growler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E67163784B7D09A3C51E99C5 /* Pods-Growler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Growler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Growler/Pods-Growler.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,12 +103,12 @@
 			isa = PBXGroup;
 			children = (
 				4D464D4F1E258BA200443D3B /* Assets */,
+				4D464D531E258BBD00443D3B /* Controllers */,
+				4D464D521E258BB900443D3B /* Models */,
 				4D464D541E258BC400443D3B /* Supporting Files */,
 				4D464D551E258BCC00443D3B /* Utilities */,
-				4D464D521E258BB900443D3B /* Models */,
 				4D464D511E258BB300443D3B /* View Models */,
 				4D464D501E258BAA00443D3B /* Views */,
-				4D464D531E258BBD00443D3B /* Controllers */,
 			);
 			path = Growler;
 			sourceTree = "<group>";
@@ -145,6 +155,7 @@
 		4D464D531E258BBD00443D3B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D464D5A1E28338F00443D3B /* Tabs */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +176,18 @@
 				4D464D581E25A1E300443D3B /* Style.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		4D464D5A1E28338F00443D3B /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				4D464D5B1E2833EB00443D3B /* CellarViewController.swift */,
+				4D464D5D1E28341B00443D3B /* TradesViewController.swift */,
+				4D464D5F1E28342800443D3B /* BeersViewController.swift */,
+				4D464D611E28343700443D3B /* ProfileViewController.swift */,
+				4D464D631E2834ED00443D3B /* TabBarController.swift */,
+			);
+			name = Tabs;
 			sourceTree = "<group>";
 		};
 		ED0B0FEE7E49B55D2E22E457 /* Pods */ = {
@@ -332,8 +355,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D464D571E258CF200443D3B /* Configuration.swift in Sources */,
+				4D464D641E2834ED00443D3B /* TabBarController.swift in Sources */,
+				4D464D5E1E28341B00443D3B /* TradesViewController.swift in Sources */,
+				4D464D601E28342800443D3B /* BeersViewController.swift in Sources */,
 				4D464D591E25A1E300443D3B /* Style.swift in Sources */,
+				4D464D621E28343700443D3B /* ProfileViewController.swift in Sources */,
 				4D464D301E25873800443D3B /* AppDelegate.swift in Sources */,
+				4D464D5C1E2833EB00443D3B /* CellarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

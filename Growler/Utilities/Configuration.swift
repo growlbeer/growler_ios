@@ -12,7 +12,7 @@ public final class Configuration {
     
     static func run(_ window: UIWindow?) {
         Style.themeUI()
-        let nc = UINavigationController(rootViewController: UIViewController())
+        let nc = UINavigationController(rootViewController: TabBarController())
         window?.rootViewController = nc
         window?.makeKeyAndVisible()
     }
