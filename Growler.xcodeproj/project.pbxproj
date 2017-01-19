@@ -18,6 +18,8 @@
 		4D464D601E28342800443D3B /* BeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D5F1E28342800443D3B /* BeersViewController.swift */; };
 		4D464D621E28343700443D3B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D611E28343700443D3B /* ProfileViewController.swift */; };
 		4D464D641E2834ED00443D3B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D631E2834ED00443D3B /* TabBarController.swift */; };
+		4D926F3E1E31768E00686AAC /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D926F3D1E31768E00686AAC /* schema.json */; };
+		4D926F411E31796400686AAC /* BeersQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4D926F401E31796400686AAC /* BeersQuery.graphql */; };
 		719222E4C276BF11ABAB8F8A /* Pods_Growler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		4D464D5F1E28342800443D3B /* BeersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeersViewController.swift; path = Controllers/Tabs/BeersViewController.swift; sourceTree = "<group>"; };
 		4D464D611E28343700443D3B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Controllers/Tabs/ProfileViewController.swift; sourceTree = "<group>"; };
 		4D464D631E2834ED00443D3B /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Controllers/Tabs/TabBarController.swift; sourceTree = "<group>"; };
+		4D926F3D1E31768E00686AAC /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = schema.json; path = "Supporting Files/schema.json"; sourceTree = "<group>"; };
+		4D926F401E31796400686AAC /* BeersQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BeersQuery.graphql; path = Queries/BeersQuery.graphql; sourceTree = "<group>"; };
 		59281B937F90CEED6D5995AB /* Pods-Growler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Growler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Growler/Pods-Growler.debug.xcconfig"; sourceTree = "<group>"; };
 		C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Growler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E67163784B7D09A3C51E99C5 /* Pods-Growler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Growler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Growler/Pods-Growler.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 		4D464D2E1E25873800443D3B /* Growler */ = {
 			isa = PBXGroup;
 			children = (
+				4D926F3F1E31794D00686AAC /* Queries */,
 				4D464D4F1E258BA200443D3B /* Assets */,
 				4D464D531E258BBD00443D3B /* Controllers */,
 				4D464D521E258BB900443D3B /* Models */,
@@ -165,6 +170,7 @@
 			children = (
 				4D464D2F1E25873800443D3B /* AppDelegate.swift */,
 				4D464D3B1E25873800443D3B /* Info.plist */,
+				4D926F3D1E31768E00686AAC /* schema.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -190,6 +196,14 @@
 			name = Tabs;
 			sourceTree = "<group>";
 		};
+		4D926F3F1E31794D00686AAC /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				4D926F401E31796400686AAC /* BeersQuery.graphql */,
+			);
+			name = Queries;
+			sourceTree = "<group>";
+		};
 		ED0B0FEE7E49B55D2E22E457 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +221,7 @@
 			buildConfigurationList = 4D464D491E25873900443D3B /* Build configuration list for PBXNativeTarget "Growler" */;
 			buildPhases = (
 				ECE6EE5633AACFB510252798 /* [CP] Check Pods Manifest.lock */,
+				4DEABF6F1E3182580090A7CA /* Generate Apollo GraphQL API */,
 				4D464D281E25873800443D3B /* Sources */,
 				4D464D291E25873800443D3B /* Frameworks */,
 				4D464D2A1E25873800443D3B /* Resources */,
@@ -288,6 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D464D3A1E25873800443D3B /* LaunchScreen.storyboard in Resources */,
+				4D926F3E1E31768E00686AAC /* schema.json in Resources */,
+				4D926F411E31796400686AAC /* BeersQuery.graphql in Resources */,
 				4D464D371E25873800443D3B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +333,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Growler/Pods-Growler-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		4DEABF6F1E3182580090A7CA /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift";
 		};
 		99EA030C26E71CBB63B2A447 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

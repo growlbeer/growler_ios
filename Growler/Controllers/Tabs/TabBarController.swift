@@ -39,6 +39,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
 extension TabBarController {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        print(viewController.title ?? "")
+        
     }
 }
