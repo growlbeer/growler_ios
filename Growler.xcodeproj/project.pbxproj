@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D2F67521E32AD72005D4D0B /* QueryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F67511E32AD72005D4D0B /* QueryClient.swift */; };
+		4D2F67541E32B707005D4D0B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F67531E32B707005D4D0B /* Constants.swift */; };
 		4D464D301E25873800443D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D2F1E25873800443D3B /* AppDelegate.swift */; };
 		4D464D371E25873800443D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D464D361E25873800443D3B /* Assets.xcassets */; };
 		4D464D3A1E25873800443D3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D464D381E25873800443D3B /* LaunchScreen.storyboard */; };
@@ -18,7 +20,6 @@
 		4D464D601E28342800443D3B /* BeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D5F1E28342800443D3B /* BeersViewController.swift */; };
 		4D464D621E28343700443D3B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D611E28343700443D3B /* ProfileViewController.swift */; };
 		4D464D641E2834ED00443D3B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D631E2834ED00443D3B /* TabBarController.swift */; };
-		4D926F3E1E31768E00686AAC /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D926F3D1E31768E00686AAC /* schema.json */; };
 		4D926F411E31796400686AAC /* BeersQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4D926F401E31796400686AAC /* BeersQuery.graphql */; };
 		719222E4C276BF11ABAB8F8A /* Pods_Growler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D2F67511E32AD72005D4D0B /* QueryClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryClient.swift; path = Utilities/QueryClient.swift; sourceTree = "<group>"; };
+		4D2F67531E32B707005D4D0B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utilities/Constants.swift; sourceTree = "<group>"; };
 		4D464D2C1E25873800443D3B /* Growler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Growler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D464D2F1E25873800443D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Supporting Files/AppDelegate.swift"; sourceTree = "<group>"; };
 		4D464D361E25873800443D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets/Assets.xcassets; sourceTree = "<group>"; };
@@ -49,7 +52,6 @@
 		4D464D5F1E28342800443D3B /* BeersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeersViewController.swift; path = Controllers/Tabs/BeersViewController.swift; sourceTree = "<group>"; };
 		4D464D611E28343700443D3B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Controllers/Tabs/ProfileViewController.swift; sourceTree = "<group>"; };
 		4D464D631E2834ED00443D3B /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Controllers/Tabs/TabBarController.swift; sourceTree = "<group>"; };
-		4D926F3D1E31768E00686AAC /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = schema.json; path = "Supporting Files/schema.json"; sourceTree = "<group>"; };
 		4D926F401E31796400686AAC /* BeersQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BeersQuery.graphql; path = Queries/BeersQuery.graphql; sourceTree = "<group>"; };
 		59281B937F90CEED6D5995AB /* Pods-Growler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Growler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Growler/Pods-Growler.debug.xcconfig"; sourceTree = "<group>"; };
 		C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Growler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,7 +172,6 @@
 			children = (
 				4D464D2F1E25873800443D3B /* AppDelegate.swift */,
 				4D464D3B1E25873800443D3B /* Info.plist */,
-				4D926F3D1E31768E00686AAC /* schema.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -180,6 +181,8 @@
 			children = (
 				4D464D561E258CF200443D3B /* Configuration.swift */,
 				4D464D581E25A1E300443D3B /* Style.swift */,
+				4D2F67511E32AD72005D4D0B /* QueryClient.swift */,
+				4D2F67531E32B707005D4D0B /* Constants.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -303,7 +306,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D464D3A1E25873800443D3B /* LaunchScreen.storyboard in Resources */,
-				4D926F3E1E31768E00686AAC /* schema.json in Resources */,
 				4D926F411E31796400686AAC /* BeersQuery.graphql in Resources */,
 				4D464D371E25873800443D3B /* Assets.xcassets in Resources */,
 			);
@@ -390,7 +392,9 @@
 				4D464D5E1E28341B00443D3B /* TradesViewController.swift in Sources */,
 				4D464D601E28342800443D3B /* BeersViewController.swift in Sources */,
 				4D464D591E25A1E300443D3B /* Style.swift in Sources */,
+				4D2F67541E32B707005D4D0B /* Constants.swift in Sources */,
 				4D464D621E28343700443D3B /* ProfileViewController.swift in Sources */,
+				4D2F67521E32AD72005D4D0B /* QueryClient.swift in Sources */,
 				4D464D301E25873800443D3B /* AppDelegate.swift in Sources */,
 				4D464D5C1E2833EB00443D3B /* CellarViewController.swift in Sources */,
 			);
