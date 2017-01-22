@@ -9,5 +9,5 @@
 import Foundation
 
 struct Constants {
-    static let kQueryURL = "http://api.growl.beer/query"
+    static let kQueryURL = "http://api.growl.beer/queries"
 }

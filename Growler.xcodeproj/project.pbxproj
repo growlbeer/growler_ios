@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27F0E3E91E344FA9005C32BB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0E3E81E344FA9005C32BB /* API.swift */; };
 		4D2F67521E32AD72005D4D0B /* QueryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F67511E32AD72005D4D0B /* QueryClient.swift */; };
 		4D2F67541E32B707005D4D0B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F67531E32B707005D4D0B /* Constants.swift */; };
 		4D464D301E25873800443D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D2F1E25873800443D3B /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27F0E3E81E344FA9005C32BB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4D2F67511E32AD72005D4D0B /* QueryClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryClient.swift; path = Utilities/QueryClient.swift; sourceTree = "<group>"; };
 		4D2F67531E32B707005D4D0B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utilities/Constants.swift; sourceTree = "<group>"; };
 		4D464D2C1E25873800443D3B /* Growler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Growler.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 		4D464D2E1E25873800443D3B /* Growler */ = {
 			isa = PBXGroup;
 			children = (
+				27F0E3E81E344FA9005C32BB /* API.swift */,
 				4D926F3F1E31794D00686AAC /* Queries */,
 				4D464D4F1E258BA200443D3B /* Assets */,
 				4D464D531E258BBD00443D3B /* Controllers */,
@@ -387,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F0E3E91E344FA9005C32BB /* API.swift in Sources */,
 				4D464D571E258CF200443D3B /* Configuration.swift in Sources */,
 				4D464D641E2834ED00443D3B /* TabBarController.swift in Sources */,
 				4D464D5E1E28341B00443D3B /* TradesViewController.swift in Sources */,
