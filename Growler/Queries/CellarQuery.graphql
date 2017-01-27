@@ -1,0 +1,11 @@
+fragment BeerDetails on Beer {
+  id
+  name
+  description
+}
+
+query Beers {
+  beers {
+    ...BeerDetails
+  }
+}

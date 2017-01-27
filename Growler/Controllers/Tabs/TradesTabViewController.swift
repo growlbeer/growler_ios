@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TradesViewController: UIViewController {
+class TradesTabViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,7 @@ class TradesViewController: UIViewController {
     static func title() -> String { return "Trades" }
     
     fileprivate func setupView() {
-        title = TradesViewController.title()
+        title = TradesTabViewController.title()
         view.backgroundColor = UIColor.yellow
     }
 

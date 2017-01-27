@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  BeersViewController.swift
 //  Growler
 //
 //  Created by Matt Bush on 1/12/17.
@@ -8,18 +8,18 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class BeersTabViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
-    static func title() -> String { return "Profile" }
+    static func title() -> String { return "Beers" }
     
     fileprivate func setupView() {
-        title = ProfileViewController.title()
-        view.backgroundColor = UIColor.brown
+        title = BeersTabViewController.title()
+        view.backgroundColor = UIColor.gray
     }
-    
+
 }

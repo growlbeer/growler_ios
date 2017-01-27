@@ -17,15 +17,15 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     fileprivate func setupTabBar() {
-        let cellarVC    = CellarViewController()
-        let tradesVC    = TradesViewController()
-        let beersVC     = BeersViewController()
-        let profileVC   = ProfileViewController()
+        let cellarVC    = CellarTabViewController()
+        let tradesVC    = TradesTabViewController()
+        let beersVC     = BeersTabViewController()
+        let profileVC   = ProfileTabViewController()
         
-        let cellarBarItem   = UITabBarItem(title: CellarViewController.title(), image: nil, selectedImage: nil)
-        let tradesBarItem   = UITabBarItem(title: TradesViewController.title(), image: nil, selectedImage: nil)
-        let beersBarItem    = UITabBarItem(title: BeersViewController.title(), image: nil, selectedImage: nil)
-        let profileBarItem  = UITabBarItem(title: ProfileViewController.title(), image: nil, selectedImage: nil)
+        let cellarBarItem   = UITabBarItem(title: CellarTabViewController.title(), image: nil, selectedImage: nil)
+        let tradesBarItem   = UITabBarItem(title: TradesTabViewController.title(), image: nil, selectedImage: nil)
+        let beersBarItem    = UITabBarItem(title: BeersTabViewController.title(), image: nil, selectedImage: nil)
+        let profileBarItem  = UITabBarItem(title: ProfileTabViewController.title(), image: nil, selectedImage: nil)
         
         cellarVC.tabBarItem     = cellarBarItem
         tradesVC.tabBarItem     = tradesBarItem
