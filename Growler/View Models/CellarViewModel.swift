@@ -14,15 +14,15 @@ class CellarViewModel {
         }
     }
     
-//    fileprivate var beers: [Beer]? {
-//        didSet { dump(beers); render?() }
-//    }
-//    
-//    init() {
-//        QueryClient.sharedClient.fetch(query: CellarQuery()) { [weak self] result, _ in
-//            guard let data = result?.data else { return }
-//            self?.beers = data
-//        }
-//    }
+    fileprivate var beers: [Beer]? {
+        didSet { dump(beers); render?() }
+    }
+    
+    init() {
+        QueryClient.sharedClient.fetch(query: CellarQuery()) { [weak self] result, _ in
+            guard let data = result?.data else { return }
+            self?.beers = data
+        }
+    }
     
 }
