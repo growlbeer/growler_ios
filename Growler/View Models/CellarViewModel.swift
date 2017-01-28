@@ -20,7 +20,8 @@ class CellarViewModel {
     
     init() {
         QueryClient.sharedClient.fetch(query: CellarQuery()){ (result, error) in
-            self.beers = result?.data?.beers
+            self.beers = result?.data?.beers as? [CellarQuery.Data.Beer]
+            dump(self.beers)
         }
     }
 }
