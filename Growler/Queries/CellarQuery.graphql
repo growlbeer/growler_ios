@@ -4,7 +4,7 @@ fragment BeerDetails on Beer {
   description
 }
 
-query Beers {
+query Cellar {
   beers {
     ...BeerDetails
   }

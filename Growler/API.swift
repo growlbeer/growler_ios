@@ -2,9 +2,9 @@
 
 import Apollo
 
-public final class BeersQuery: GraphQLQuery {
+public final class CellarQuery: GraphQLQuery {
   public static let operationDefinition =
-    "query Beers {" +
+    "query Cellar {" +
     "  beers {" +
     "    ...BeerDetails" +
     "  }" +
