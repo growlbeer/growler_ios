@@ -1,0 +1,19 @@
+query Trades {
+    trades {
+        id
+        state
+        offers {
+            id
+            beers {
+                id
+                name
+                medium_image
+            }
+            user {
+                id
+                email
+                first_name
+            }
+        }
+    }
+}

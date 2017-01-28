@@ -1,6 +1,11 @@
-query BeerSearch($q: String) {
-    search(q: $q) {
-        beers {
+query Wanted {
+    user_beers {
+        user_id
+        beer_id
+        want
+        trade
+        have
+        beer {
             id
             name
             description

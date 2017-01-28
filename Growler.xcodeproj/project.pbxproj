@@ -26,8 +26,8 @@
 		4D9ABDC61E3BD2D100D18DBF /* BeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDC51E3BD2D100D18DBF /* BeerCell.swift */; };
 		4D9ABDC81E3BD2E200D18DBF /* TradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDC71E3BD2E200D18DBF /* TradeCell.swift */; };
 		4D9ABDCC1E3BEB7800D18DBF /* CellarQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4D9ABDC91E3BEB7800D18DBF /* CellarQuery.graphql */; };
-		4D9ABDCD1E3BEB7800D18DBF /* ForTradeQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4D9ABDCA1E3BEB7800D18DBF /* ForTradeQuery.graphql */; };
-		4D9ABDCE1E3BEB7800D18DBF /* WishlistQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4D9ABDCB1E3BEB7800D18DBF /* WishlistQuery.graphql */; };
+		4D9ABDCD1E3BEB7800D18DBF /* TradesQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4D9ABDCA1E3BEB7800D18DBF /* TradesQuery.graphql */; };
+		4D9ABDCE1E3BEB7800D18DBF /* WantedQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4D9ABDCB1E3BEB7800D18DBF /* WantedQuery.graphql */; };
 		4D9ABDD11E3BEE2500D18DBF /* CellarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDD01E3BEE2500D18DBF /* CellarViewModel.swift */; };
 		4D9ABDDC1E3BF67900D18DBF /* CellarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDDB1E3BF67900D18DBF /* CellarListViewController.swift */; };
 		4D9ABDDF1E3BF8F300D18DBF /* ForTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDDD1E3BF8F300D18DBF /* ForTradeViewModel.swift */; };
@@ -69,8 +69,8 @@
 		4D9ABDC51E3BD2D100D18DBF /* BeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeerCell.swift; path = Views/BeerCell.swift; sourceTree = "<group>"; };
 		4D9ABDC71E3BD2E200D18DBF /* TradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TradeCell.swift; path = Views/TradeCell.swift; sourceTree = "<group>"; };
 		4D9ABDC91E3BEB7800D18DBF /* CellarQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CellarQuery.graphql; path = Queries/CellarQuery.graphql; sourceTree = "<group>"; };
-		4D9ABDCA1E3BEB7800D18DBF /* ForTradeQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ForTradeQuery.graphql; path = Queries/ForTradeQuery.graphql; sourceTree = "<group>"; };
-		4D9ABDCB1E3BEB7800D18DBF /* WishlistQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WishlistQuery.graphql; path = Queries/WishlistQuery.graphql; sourceTree = "<group>"; };
+		4D9ABDCA1E3BEB7800D18DBF /* TradesQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TradesQuery.graphql; path = Queries/TradesQuery.graphql; sourceTree = "<group>"; };
+		4D9ABDCB1E3BEB7800D18DBF /* WantedQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WantedQuery.graphql; path = Queries/WantedQuery.graphql; sourceTree = "<group>"; };
 		4D9ABDD01E3BEE2500D18DBF /* CellarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellarViewModel.swift; path = "View Models/CellarViewModel.swift"; sourceTree = "<group>"; };
 		4D9ABDDB1E3BF67900D18DBF /* CellarListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellarListViewController.swift; path = Controllers/Tabs/CellarListViewController.swift; sourceTree = "<group>"; };
 		4D9ABDDD1E3BF8F300D18DBF /* ForTradeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForTradeViewModel.swift; path = "View Models/ForTradeViewModel.swift"; sourceTree = "<group>"; };
@@ -229,8 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				4D9ABDC91E3BEB7800D18DBF /* CellarQuery.graphql */,
-				4D9ABDCA1E3BEB7800D18DBF /* ForTradeQuery.graphql */,
-				4D9ABDCB1E3BEB7800D18DBF /* WishlistQuery.graphql */,
+				4D9ABDCA1E3BEB7800D18DBF /* TradesQuery.graphql */,
+				4D9ABDCB1E3BEB7800D18DBF /* WantedQuery.graphql */,
 				4D926F401E31796400686AAC /* BeersQuery.graphql */,
 			);
 			name = Queries;
@@ -378,10 +378,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D9ABDCD1E3BEB7800D18DBF /* ForTradeQuery.graphql in Resources */,
+				4D9ABDCD1E3BEB7800D18DBF /* TradesQuery.graphql in Resources */,
 				4D464D3A1E25873800443D3B /* LaunchScreen.storyboard in Resources */,
 				4D9ABDCC1E3BEB7800D18DBF /* CellarQuery.graphql in Resources */,
-				4D9ABDCE1E3BEB7800D18DBF /* WishlistQuery.graphql in Resources */,
+				4D9ABDCE1E3BEB7800D18DBF /* WantedQuery.graphql in Resources */,
 				4D926F411E31796400686AAC /* BeersQuery.graphql in Resources */,
 				4D464D371E25873800443D3B /* Assets.xcassets in Resources */,
 			);
