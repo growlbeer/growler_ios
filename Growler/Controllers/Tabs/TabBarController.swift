@@ -17,10 +17,10 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     fileprivate func setupTabBar() {
-        let cellarVC    = CellarTabViewController()
-        let tradesVC    = TradesTabViewController()
-        let beersVC     = BeersTabViewController()
-        let profileVC   = ProfileTabViewController()
+        let cellarVC    = UINavigationController(rootViewController: CellarTabViewController())
+        let tradesVC    = UINavigationController(rootViewController: TradesTabViewController())
+        let beersVC     = UINavigationController(rootViewController: BeersTabViewController())
+        let profileVC   = UINavigationController(rootViewController: ProfileTabViewController()) 
         
         let cellarBarItem   = UITabBarItem(title: CellarTabViewController.title(), image: nil, selectedImage: nil)
         let tradesBarItem   = UITabBarItem(title: TradesTabViewController.title(), image: nil, selectedImage: nil)
@@ -39,6 +39,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
 extension TabBarController {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        
+
     }
 }

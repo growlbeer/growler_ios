@@ -19,7 +19,7 @@ class BeersTabViewController: UIViewController {
     
     fileprivate func setupView() {
         title = BeersTabViewController.title()
-        view.backgroundColor = UIColor.gray
+        view.backgroundColor = Style.white
     }
 
 }

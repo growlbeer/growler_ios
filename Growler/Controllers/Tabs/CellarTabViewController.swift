@@ -24,7 +24,7 @@ class CellarTabViewController: UIViewController {
 
     fileprivate func setupView() {
         title = CellarTabViewController.title()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = Style.white
         setupSegmentedControl()
     }
     
@@ -42,7 +42,7 @@ class CellarTabViewController: UIViewController {
     
     fileprivate func setVC(index: Int) {
         switch index {
-        case Cellar.all.rawValue: break // set in container CellarViewController(viewModel: CellarViewModel())
+        case Cellar.all.rawValue: break // set in container CellarListViewController(viewModel: CellarViewModel())
         case Cellar.forTrade.rawValue: break
         case Cellar.wishlist.rawValue: break
         default: break
@@ -50,7 +50,7 @@ class CellarTabViewController: UIViewController {
     }
     
     fileprivate func layout(segmentedControl segControl: UISegmentedControl) {
-        segControl.autoAlignAxis(.horizontal, toSameAxisOf: view)
+        segControl.autoPinEdge(toSuperviewEdge: .top, withInset: 20)
         segControl.autoAlignAxis(.vertical, toSameAxisOf: view)
     }
 

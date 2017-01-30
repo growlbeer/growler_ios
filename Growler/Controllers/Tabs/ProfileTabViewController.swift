@@ -19,7 +19,7 @@ class ProfileTabViewController: UIViewController {
     
     fileprivate func setupView() {
         title = ProfileTabViewController.title()
-        view.backgroundColor = UIColor.brown
+        view.backgroundColor = Style.white
     }
     
 }

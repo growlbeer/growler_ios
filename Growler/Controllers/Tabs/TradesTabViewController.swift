@@ -19,7 +19,7 @@ class TradesTabViewController: UIViewController {
     
     fileprivate func setupView() {
         title = TradesTabViewController.title()
-        view.backgroundColor = UIColor.yellow
+        view.backgroundColor = Style.white
     }
 
 }
