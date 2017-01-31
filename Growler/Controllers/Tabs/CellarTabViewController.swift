@@ -9,12 +9,10 @@
 import UIKit
 import PureLayout
 
-enum Cellar: Int {
-    case all, forTrade, wishlist
-}
-
 class CellarTabViewController: UIViewController {
-
+    
+    let beersListVC = BeersListVC(viewModel: BeeersListViewModel())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -30,19 +28,21 @@ class CellarTabViewController: UIViewController {
     
     fileprivate func setupSegmentedControl() {
         let segControl = UISegmentedControl(items: ["All", "For Trade", "Wishlist"])
-        segControl.selectedSegmentIndex = Cellar.all.rawValue
         segControl.addTarget(self, action: #selector(setView), for: .valueChanged)
+        // check to see if gets called before or after target is added
+//        segControl.selectedSegmentIndex = Cellar.all.rawValue
         view.addSubview(segControl)
         layout(segmentedControl: segControl)
     }
     
     @objc fileprivate func setView(sender: UISegmentedControl) {
+        beersListVC.viewModel.query(sender.selectedSegmentIndex)
         setVC(index: sender.selectedSegmentIndex)
     }
     
     fileprivate func setVC(index: Int) {
         switch index {
-        case Cellar.all.rawValue: break // set in container CellarListViewController(viewModel: CellarViewModel())
+        case Cellar.all.rawValue: break // set new view model or call function to set new list of beers
         case Cellar.forTrade.rawValue: break
         case Cellar.wishlist.rawValue: break
         default: break

@@ -6,6 +6,10 @@
 //  Copyright © 2017 Growler. All rights reserved.
 //
 
+enum Cellar: Int {
+    case all, forTrade, wishlist
+}
+
 class CellarViewModel {
     
     public var render: ((Void) -> Void)? {
@@ -24,4 +28,14 @@ class CellarViewModel {
             dump(self.beers)
         }
     }
+    
+    public func query(forIndex index: Index) {
+        switch <#value#> {
+        case <#pattern#>:
+            <#code#>
+        default:
+            <#code#>
+        }
+    }
+    
 }
