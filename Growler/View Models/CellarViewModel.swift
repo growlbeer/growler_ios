@@ -30,11 +30,11 @@ class CellarViewModel {
     }
     
     public func query(forIndex index: Index) {
-        switch <#value#> {
-        case <#pattern#>:
-            <#code#>
-        default:
-            <#code#>
+        switch index {
+        case Cellar.all.rawValue: break
+        case Cellar.forTrade.rawValue: break
+        case Cellar.wishlist.rawValue: break
+        default: break
         }
     }
     
