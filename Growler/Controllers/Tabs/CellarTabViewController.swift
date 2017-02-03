@@ -24,7 +24,7 @@ class CellarTabViewController: UIViewController {
         title = CellarTabViewController.title()
         view.backgroundColor = Style.white
         setupSegmentedControl()
-        // add cellar list vc
+        // add cellar list vc as container
     }
     
     fileprivate func setupSegmentedControl() {
@@ -43,6 +43,10 @@ class CellarTabViewController: UIViewController {
     fileprivate func layout(segmentedControl segControl: UISegmentedControl) {
         segControl.autoPinEdge(toSuperviewEdge: .top, withInset: 20)
         segControl.autoAlignAxis(.vertical, toSameAxisOf: view)
+    }
+    
+    fileprivate func layout(beerListVC vc: BeerListViewController) {
+        
     }
 
 }
