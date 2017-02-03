@@ -11,7 +11,7 @@ import PureLayout
 
 class CellarTabViewController: UIViewController {
     
-    let beersListVC = BeersListVC(viewModel: BeeersListViewModel())
+    let beerListVC = BeerListViewController(viewModel: BeerListViewModel())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,29 +24,20 @@ class CellarTabViewController: UIViewController {
         title = CellarTabViewController.title()
         view.backgroundColor = Style.white
         setupSegmentedControl()
+        // add cellar list vc
     }
     
     fileprivate func setupSegmentedControl() {
         let segControl = UISegmentedControl(items: ["All", "For Trade", "Wishlist"])
-        segControl.addTarget(self, action: #selector(setView), for: .valueChanged)
+        segControl.addTarget(self, action: #selector(setQuery), for: .valueChanged)
         // check to see if gets called before or after target is added
-//        segControl.selectedSegmentIndex = Cellar.all.rawValue
+        segControl.selectedSegmentIndex = Cellar.all.rawValue
         view.addSubview(segControl)
         layout(segmentedControl: segControl)
     }
     
-    @objc fileprivate func setView(sender: UISegmentedControl) {
-        beersListVC.viewModel.query(sender.selectedSegmentIndex)
-        setVC(index: sender.selectedSegmentIndex)
-    }
-    
-    fileprivate func setVC(index: Int) {
-        switch index {
-        case Cellar.all.rawValue: break // set new view model or call function to set new list of beers
-        case Cellar.forTrade.rawValue: break
-        case Cellar.wishlist.rawValue: break
-        default: break
-        }
+    @objc fileprivate func setQuery(sender: UISegmentedControl) {
+        beerListVC.viewModel.query(sender.selectedSegmentIndex)
     }
     
     fileprivate func layout(segmentedControl segControl: UISegmentedControl) {

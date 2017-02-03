@@ -22,16 +22,13 @@
 		4D464D621E28343700443D3B /* ProfileTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D611E28343700443D3B /* ProfileTabViewController.swift */; };
 		4D464D641E2834ED00443D3B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D631E2834ED00443D3B /* TabBarController.swift */; };
 		4D926F411E31796400686AAC /* BeersQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4D926F401E31796400686AAC /* BeersQuery.graphql */; };
-		4D9ABDC41E3BD1AC00D18DBF /* CellarTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDC31E3BD1AC00D18DBF /* CellarTabViewModel.swift */; };
 		4D9ABDC61E3BD2D100D18DBF /* BeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDC51E3BD2D100D18DBF /* BeerCell.swift */; };
 		4D9ABDC81E3BD2E200D18DBF /* TradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDC71E3BD2E200D18DBF /* TradeCell.swift */; };
 		4D9ABDCC1E3BEB7800D18DBF /* CellarQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4D9ABDC91E3BEB7800D18DBF /* CellarQuery.graphql */; };
 		4D9ABDCD1E3BEB7800D18DBF /* TradesQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4D9ABDCA1E3BEB7800D18DBF /* TradesQuery.graphql */; };
 		4D9ABDCE1E3BEB7800D18DBF /* WantedQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4D9ABDCB1E3BEB7800D18DBF /* WantedQuery.graphql */; };
-		4D9ABDD11E3BEE2500D18DBF /* CellarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDD01E3BEE2500D18DBF /* CellarViewModel.swift */; };
-		4D9ABDDC1E3BF67900D18DBF /* CellarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDDB1E3BF67900D18DBF /* CellarListViewController.swift */; };
-		4D9ABDDF1E3BF8F300D18DBF /* ForTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDDD1E3BF8F300D18DBF /* ForTradeViewModel.swift */; };
-		4D9ABDE01E3BF8F300D18DBF /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDDE1E3BF8F300D18DBF /* WishlistViewModel.swift */; };
+		4D9ABDD11E3BEE2500D18DBF /* BeerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDD01E3BEE2500D18DBF /* BeerListViewModel.swift */; };
+		4D9ABDDC1E3BF67900D18DBF /* BeerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDDB1E3BF67900D18DBF /* BeerListViewController.swift */; };
 		719222E4C276BF11ABAB8F8A /* Pods_Growler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */; };
 		76DB38EA1E3EC5E4001CF297 /* LibreBaskerville-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76DB38E31E3EC5E4001CF297 /* LibreBaskerville-Bold.ttf */; };
 		76DB38EB1E3EC5E4001CF297 /* LibreBaskerville-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76DB38E41E3EC5E4001CF297 /* LibreBaskerville-Italic.ttf */; };
@@ -73,16 +70,13 @@
 		4D464D611E28343700443D3B /* ProfileTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTabViewController.swift; path = Controllers/Tabs/ProfileTabViewController.swift; sourceTree = "<group>"; };
 		4D464D631E2834ED00443D3B /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Controllers/Tabs/TabBarController.swift; sourceTree = "<group>"; };
 		4D926F401E31796400686AAC /* BeersQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BeersQuery.graphql; path = Queries/BeersQuery.graphql; sourceTree = "<group>"; };
-		4D9ABDC31E3BD1AC00D18DBF /* CellarTabViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellarTabViewModel.swift; path = "View Models/CellarTabViewModel.swift"; sourceTree = "<group>"; };
 		4D9ABDC51E3BD2D100D18DBF /* BeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeerCell.swift; path = Views/BeerCell.swift; sourceTree = "<group>"; };
 		4D9ABDC71E3BD2E200D18DBF /* TradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TradeCell.swift; path = Views/TradeCell.swift; sourceTree = "<group>"; };
 		4D9ABDC91E3BEB7800D18DBF /* CellarQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CellarQuery.graphql; path = Queries/CellarQuery.graphql; sourceTree = "<group>"; };
 		4D9ABDCA1E3BEB7800D18DBF /* TradesQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TradesQuery.graphql; path = Queries/TradesQuery.graphql; sourceTree = "<group>"; };
 		4D9ABDCB1E3BEB7800D18DBF /* WantedQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WantedQuery.graphql; path = Queries/WantedQuery.graphql; sourceTree = "<group>"; };
-		4D9ABDD01E3BEE2500D18DBF /* CellarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellarViewModel.swift; path = "View Models/CellarViewModel.swift"; sourceTree = "<group>"; };
-		4D9ABDDB1E3BF67900D18DBF /* CellarListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellarListViewController.swift; path = Controllers/Tabs/CellarListViewController.swift; sourceTree = "<group>"; };
-		4D9ABDDD1E3BF8F300D18DBF /* ForTradeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForTradeViewModel.swift; path = "View Models/ForTradeViewModel.swift"; sourceTree = "<group>"; };
-		4D9ABDDE1E3BF8F300D18DBF /* WishlistViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WishlistViewModel.swift; path = "View Models/WishlistViewModel.swift"; sourceTree = "<group>"; };
+		4D9ABDD01E3BEE2500D18DBF /* BeerListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeerListViewModel.swift; path = "View Models/BeerListViewModel.swift"; sourceTree = "<group>"; };
+		4D9ABDDB1E3BF67900D18DBF /* BeerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeerListViewController.swift; path = Controllers/Tabs/BeerListViewController.swift; sourceTree = "<group>"; };
 		59281B937F90CEED6D5995AB /* Pods-Growler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Growler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Growler/Pods-Growler.debug.xcconfig"; sourceTree = "<group>"; };
 		76DB38E31E3EC5E4001CF297 /* LibreBaskerville-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Bold.ttf"; sourceTree = "<group>"; };
 		76DB38E41E3EC5E4001CF297 /* LibreBaskerville-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Italic.ttf"; sourceTree = "<group>"; };
@@ -196,7 +190,7 @@
 		4D464D511E258BB300443D3B /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				4D9ABDCF1E3BEE1000D18DBF /* Cellar */,
+				4D9ABDD01E3BEE2500D18DBF /* BeerListViewModel.swift */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -260,22 +254,11 @@
 			name = Queries;
 			sourceTree = "<group>";
 		};
-		4D9ABDCF1E3BEE1000D18DBF /* Cellar */ = {
-			isa = PBXGroup;
-			children = (
-				4D9ABDC31E3BD1AC00D18DBF /* CellarTabViewModel.swift */,
-				4D9ABDD01E3BEE2500D18DBF /* CellarViewModel.swift */,
-				4D9ABDDD1E3BF8F300D18DBF /* ForTradeViewModel.swift */,
-				4D9ABDDE1E3BF8F300D18DBF /* WishlistViewModel.swift */,
-			);
-			name = Cellar;
-			sourceTree = "<group>";
-		};
 		4D9ABDD61E3BF63300D18DBF /* Cellar */ = {
 			isa = PBXGroup;
 			children = (
 				4D464D5B1E2833EB00443D3B /* CellarTabViewController.swift */,
-				4D9ABDDB1E3BF67900D18DBF /* CellarListViewController.swift */,
+				4D9ABDDB1E3BF67900D18DBF /* BeerListViewController.swift */,
 			);
 			name = Cellar;
 			sourceTree = "<group>";
@@ -507,20 +490,17 @@
 				4D464D571E258CF200443D3B /* Configuration.swift in Sources */,
 				4D464D641E2834ED00443D3B /* TabBarController.swift in Sources */,
 				4D464D5E1E28341B00443D3B /* TradesTabViewController.swift in Sources */,
-				4D9ABDE01E3BF8F300D18DBF /* WishlistViewModel.swift in Sources */,
 				4D464D601E28342800443D3B /* BeersTabViewController.swift in Sources */,
 				4D464D591E25A1E300443D3B /* Style.swift in Sources */,
 				4D2F67541E32B707005D4D0B /* Constants.swift in Sources */,
-				4D9ABDDF1E3BF8F300D18DBF /* ForTradeViewModel.swift in Sources */,
 				76DB38F31E3ED277001CF297 /* UIImage+Growler.swift in Sources */,
 				4D9ABDC81E3BD2E200D18DBF /* TradeCell.swift in Sources */,
-				4D9ABDC41E3BD1AC00D18DBF /* CellarTabViewModel.swift in Sources */,
-				4D9ABDD11E3BEE2500D18DBF /* CellarViewModel.swift in Sources */,
+				4D9ABDD11E3BEE2500D18DBF /* BeerListViewModel.swift in Sources */,
 				4D464D621E28343700443D3B /* ProfileTabViewController.swift in Sources */,
 				4D2F67521E32AD72005D4D0B /* QueryClient.swift in Sources */,
 				4D464D301E25873800443D3B /* AppDelegate.swift in Sources */,
 				4D464D5C1E2833EB00443D3B /* CellarTabViewController.swift in Sources */,
-				4D9ABDDC1E3BF67900D18DBF /* CellarListViewController.swift in Sources */,
+				4D9ABDDC1E3BF67900D18DBF /* BeerListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

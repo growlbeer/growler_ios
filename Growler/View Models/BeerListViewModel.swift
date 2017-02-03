@@ -1,5 +1,5 @@
 //
-//  CellarViewModel.swift
+//  BeerListViewModel.swift
 //  Growler
 //
 //  Created by Matt Bush on 1/27/17.
@@ -10,7 +10,7 @@ enum Cellar: Int {
     case all, forTrade, wishlist
 }
 
-class CellarViewModel {
+class BeerListViewModel {
     
     public var render: ((Void) -> Void)? {
         didSet {

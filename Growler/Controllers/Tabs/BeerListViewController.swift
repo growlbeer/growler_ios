@@ -1,5 +1,5 @@
 //
-//  CellarViewController.swift
+//  BeerListViewController.swift
 //  Growler
 //
 //  Created by Matt Bush on 1/27/17.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CellarViewController: UICollectionViewController {
+class BeerListViewController: UICollectionViewController {
     
-    let viewModel: CellarViewModel
+    let viewModel: BeerListViewModel
     
-    init(viewModel: CellarViewModel) {
+    init(viewModel: BeerListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
