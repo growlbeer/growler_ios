@@ -6,6 +6,8 @@
 //  Copyright © 2017 Growler. All rights reserved.
 //
 
+import Foundation
+
 enum Cellar: Int {
     case all, forTrade, wishlist
 }
@@ -29,7 +31,7 @@ class BeerListViewModel {
         }
     }
     
-    public func query(forIndex index: Index) {
+    public func query(forIndex index: Int) {
         switch index {
         case Cellar.all.rawValue: break
         case Cellar.forTrade.rawValue: break

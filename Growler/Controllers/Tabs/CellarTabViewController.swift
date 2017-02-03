@@ -37,7 +37,7 @@ class CellarTabViewController: UIViewController {
     }
     
     @objc fileprivate func setQuery(sender: UISegmentedControl) {
-        beerListVC.viewModel.query(sender.selectedSegmentIndex)
+        beerListVC.viewModel.query(forIndex: sender.selectedSegmentIndex)
     }
     
     fileprivate func layout(segmentedControl segControl: UISegmentedControl) {
