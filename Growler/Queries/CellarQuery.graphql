@@ -1,7 +1,16 @@
+fragment BreweryDetails on Brewery {
+    id
+    name
+}
+
 fragment BeerDetails on Beer {
-  id
-  name
-  description
+    id
+    name
+    description
+    medium_image
+    breweries {
+        ...BreweryDetails
+    }
 }
 
 query Cellar {

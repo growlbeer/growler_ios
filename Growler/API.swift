@@ -79,7 +79,7 @@ public final class CellarQuery: GraphQLQuery {
     "    ...BeerDetails" +
     "  }" +
     "}"
-  public static let queryDocument = operationDefinition.appending(BeerDetails.fragmentDefinition)
+  public static let queryDocument = operationDefinition.appending(BeerDetails.fragmentDefinition).appending(BreweryDetails.fragmentDefinition)
   public init() {
   }
 
@@ -269,12 +269,35 @@ public final class WantedQuery: GraphQLQuery {
   }
 }
 
+public struct BreweryDetails: GraphQLNamedFragment {
+  public static let fragmentDefinition =
+    "fragment BreweryDetails on Brewery {" +
+    "  id" +
+    "  name" +
+    "}"
+
+  public static let possibleTypes = ["Brewery"]
+
+  public let __typename = "Brewery"
+  public let id: GraphQLID
+  public let name: String?
+
+  public init(reader: GraphQLResultReader) throws {
+    id = try reader.value(for: Field(responseName: "id"))
+    name = try reader.optionalValue(for: Field(responseName: "name"))
+  }
+}
+
 public struct BeerDetails: GraphQLNamedFragment {
   public static let fragmentDefinition =
     "fragment BeerDetails on Beer {" +
     "  id" +
     "  name" +
     "  description" +
+    "  medium_image" +
+    "  breweries {" +
+    "    ...BreweryDetails" +
+    "  }" +
     "}"
 
   public static let possibleTypes = ["Beer"]
@@ -283,10 +306,29 @@ public struct BeerDetails: GraphQLNamedFragment {
   public let id: GraphQLID
   public let name: String?
   public let description: String?
+  public let mediumImage: String?
+  public let breweries: [Brewery?]?
 
   public init(reader: GraphQLResultReader) throws {
     id = try reader.value(for: Field(responseName: "id"))
     name = try reader.optionalValue(for: Field(responseName: "name"))
     description = try reader.optionalValue(for: Field(responseName: "description"))
+    mediumImage = try reader.optionalValue(for: Field(responseName: "medium_image"))
+    breweries = try reader.optionalList(for: Field(responseName: "breweries"))
+  }
+
+  public struct Brewery: GraphQLMappable {
+    public let __typename = "Brewery"
+
+    public let fragments: Fragments
+
+    public init(reader: GraphQLResultReader) throws {
+      let breweryDetails = try BreweryDetails(reader: reader)
+      fragments = Fragments(breweryDetails: breweryDetails)
+    }
+
+    public struct Fragments {
+      public let breweryDetails: BreweryDetails
+    }
   }
 }

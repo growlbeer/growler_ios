@@ -46,16 +46,12 @@ class BeerListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         collectionView.register(BeerCell.self, forCellWithReuseIdentifier: BeerCell.kReuseIdentifier)
     }
 
-}
-
-extension BeerListViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfBeers()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BeerCell.kReuseIdentifier, for: indexPath) as! BeerCell
-        cell.name = viewModel.beerAt(forIndexPath: indexPath).fragments.beerDetails.name!
-        return cell
+        return viewModel.configureCell(forIndexPath: indexPath, cell: cell)
     }
 }
