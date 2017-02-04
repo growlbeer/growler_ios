@@ -12,7 +12,7 @@ class BeerCell: UICollectionViewCell {
     
     static let kReuseIdentifier = "BeerCell"
     
-    let name: String
+    var name: String
     let brewer: String
     let descrip: String
     let imageURL: URL
@@ -21,6 +21,14 @@ class BeerCell: UICollectionViewCell {
     let brewerLabel = UILabel()
     let descriptionLabel = UILabel()
     let imageView = UIImageView()
+    
+    override init(frame: CGRect) {
+        self.name = "name"
+        self.brewer = "brewer"
+        self.descrip = "description"
+        self.imageURL = URL(string: "http://48tk9j3a74jb133e1k2fzz2s.wpengine.netdna-cdn.com/wp-content/uploads/2016/09/Ballast-Point-Coconut-Victory-At-Sea-22-Ounce-Bottle-Label-Feature-.jpg")!
+        super.init(frame: frame)
+    }
     
     init(name: String, brewer: String, descrip: String, imageURL: URL) {
         self.name = name

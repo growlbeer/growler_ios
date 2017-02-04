@@ -54,6 +54,8 @@ extension BeerListViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return viewModel.cell(forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BeerCell.kReuseIdentifier, for: indexPath) as! BeerCell
+        cell.name = viewModel.beerAt(forIndexPath: indexPath).fragments.beerDetails.name!
+        return cell
     }
 }
