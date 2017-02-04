@@ -24,7 +24,7 @@ class BeerListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.render = { [weak self] print("view model render complete"); self?.collectionView?.reloadData() }
+        viewModel.render = { [weak self] _ in print("view model render complete"); self?.collectionView?.reloadData() }
         setupCollectionView()
     }
     
