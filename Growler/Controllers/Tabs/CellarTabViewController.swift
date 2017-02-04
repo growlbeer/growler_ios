@@ -12,6 +12,7 @@ import PureLayout
 class CellarTabViewController: UIViewController {
     
     let beerListVC = BeerListViewController(viewModel: BeerListViewModel())
+    let segControl = UISegmentedControl(items: ["All", "For Trade", "Wishlist"])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +25,22 @@ class CellarTabViewController: UIViewController {
         title = CellarTabViewController.title()
         view.backgroundColor = Style.white
         setupSegmentedControl()
-        // add cellar list vc as container
+        setupBeerList()
     }
     
     fileprivate func setupSegmentedControl() {
-        let segControl = UISegmentedControl(items: ["All", "For Trade", "Wishlist"])
         segControl.addTarget(self, action: #selector(setQuery), for: .valueChanged)
-        // check to see if gets called before or after target is added
         segControl.selectedSegmentIndex = Cellar.all.rawValue
         view.addSubview(segControl)
         layout(segmentedControl: segControl)
+    }
+    
+    fileprivate func setupBeerList() {
+        addChildViewController(beerListVC)
+        beerListVC.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(beerListVC.view)
+        layout(beerListVC: beerListVC)
+        beerListVC.didMove(toParentViewController: self)
     }
     
     @objc fileprivate func setQuery(sender: UISegmentedControl) {
@@ -46,7 +53,8 @@ class CellarTabViewController: UIViewController {
     }
     
     fileprivate func layout(beerListVC vc: BeerListViewController) {
-        
+        vc.view.autoPinEdge(.top, to: .bottom, of: segControl, withOffset: 20)
+        vc.view.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 0,left: 20,bottom: 20,right: 20), excludingEdge: .top)
     }
 
 }
