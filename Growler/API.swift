@@ -192,6 +192,75 @@ public final class TradesQuery: GraphQLQuery {
   }
 }
 
+public final class UserBeersQuery: GraphQLQuery {
+  public static let operationDefinition =
+    "query UserBeers($filter_type: String) {" +
+    "  user_beers(filter_type: $filter_type) {" +
+    "    user_id" +
+    "    beer_id" +
+    "    want" +
+    "    trade" +
+    "    have" +
+    "    beer {" +
+    "      ...BeerDetails" +
+    "    }" +
+    "  }" +
+    "}"
+  public static let queryDocument = operationDefinition.appending(BeerDetails.fragmentDefinition).appending(BreweryDetails.fragmentDefinition)
+
+  public let filterType: String?
+
+  public init(filterType: String? = nil) {
+    self.filterType = filterType
+  }
+
+  public var variables: GraphQLMap? {
+    return ["filter_type": filterType]
+  }
+
+  public struct Data: GraphQLMappable {
+    public let userBeers: [UserBeer?]
+
+    public init(reader: GraphQLResultReader) throws {
+      userBeers = try reader.list(for: Field(responseName: "user_beers"))
+    }
+
+    public struct UserBeer: GraphQLMappable {
+      public let __typename = "UserBeer"
+      public let userId: Int
+      public let beerId: Int
+      public let want: Int?
+      public let trade: Int?
+      public let have: Int?
+      public let beer: Beer?
+
+      public init(reader: GraphQLResultReader) throws {
+        userId = try reader.value(for: Field(responseName: "user_id"))
+        beerId = try reader.value(for: Field(responseName: "beer_id"))
+        want = try reader.optionalValue(for: Field(responseName: "want"))
+        trade = try reader.optionalValue(for: Field(responseName: "trade"))
+        have = try reader.optionalValue(for: Field(responseName: "have"))
+        beer = try reader.optionalValue(for: Field(responseName: "beer"))
+      }
+
+      public struct Beer: GraphQLMappable {
+        public let __typename = "Beer"
+
+        public let fragments: Fragments
+
+        public init(reader: GraphQLResultReader) throws {
+          let beerDetails = try BeerDetails(reader: reader)
+          fragments = Fragments(beerDetails: beerDetails)
+        }
+
+        public struct Fragments {
+          public let beerDetails: BeerDetails
+        }
+      }
+    }
+  }
+}
+
 public final class WantedQuery: GraphQLQuery {
   public static let operationDefinition =
     "query Wanted {" +

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27D552221E46AB670013E258 /* UserBeersQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 27D552211E46AB670013E258 /* UserBeersQuery.graphql */; };
 		27F0E3E91E344FA9005C32BB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0E3E81E344FA9005C32BB /* API.swift */; };
 		4D2F67521E32AD72005D4D0B /* QueryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F67511E32AD72005D4D0B /* QueryClient.swift */; };
 		4D2F67541E32B707005D4D0B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F67531E32B707005D4D0B /* Constants.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27D552211E46AB670013E258 /* UserBeersQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = UserBeersQuery.graphql; path = Queries/UserBeersQuery.graphql; sourceTree = "<group>"; };
 		27F0E3E81E344FA9005C32BB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4D2F67511E32AD72005D4D0B /* QueryClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryClient.swift; path = Utilities/QueryClient.swift; sourceTree = "<group>"; };
 		4D2F67531E32B707005D4D0B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utilities/Constants.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				4D9ABDC91E3BEB7800D18DBF /* CellarQuery.graphql */,
+				27D552211E46AB670013E258 /* UserBeersQuery.graphql */,
 				4D9ABDCA1E3BEB7800D18DBF /* TradesQuery.graphql */,
 				4D9ABDCB1E3BEB7800D18DBF /* WantedQuery.graphql */,
 				4D926F401E31796400686AAC /* BeersQuery.graphql */,
@@ -399,6 +402,7 @@
 				4D9ABDCD1E3BEB7800D18DBF /* TradesQuery.graphql in Resources */,
 				76DB38ED1E3EC5E4001CF297 /* Raleway-Regular.ttf in Resources */,
 				76DB38EA1E3EC5E4001CF297 /* LibreBaskerville-Bold.ttf in Resources */,
+				27D552221E46AB670013E258 /* UserBeersQuery.graphql in Resources */,
 				4D464D3A1E25873800443D3B /* LaunchScreen.storyboard in Resources */,
 				76DB38EC1E3EC5E4001CF297 /* LibreBaskerville-Regular.ttf in Resources */,
 				4D9ABDCC1E3BEB7800D18DBF /* CellarQuery.graphql in Resources */,

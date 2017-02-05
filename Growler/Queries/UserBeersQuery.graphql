@@ -1,0 +1,13 @@
+# Switch from string to enum for UserBeerType (Trade, Want, Own)
+query UserBeers($filter_type: String) {
+    user_beers(filter_type: $filter_type) {
+        user_id
+        beer_id
+        want
+        trade
+        have
+        beer {
+            ...BeerDetails
+        }
+    }
+}

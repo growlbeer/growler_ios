@@ -16,27 +16,29 @@ enum Cellar: Int {
 class BeerListViewModel {
     
     public var render: ((Void) -> Void)? {
-        didSet {
-            render?()
-        }
+        didSet { render?() }
     }
     
-    fileprivate var beers: [CellarQuery.Data.Beer]? {
-        didSet { dump(beers); render?() }
+    fileprivate var beers: [UserBeersQuery.Data.UserBeer.Beer]? {
+        didSet { render?() }
     }
     
     init() {
-        QueryClient.sharedClient.fetch(query: CellarQuery()){ (result, error) in
-            self.beers = result?.data?.beers as? [CellarQuery.Data.Beer]
-        }
+        query(forIndex: Cellar.all.rawValue)
     }
     
     public func query(forIndex index: Int) {
+        var filterType = "have"
         switch index {
-        case Cellar.all.rawValue: break
-        case Cellar.forTrade.rawValue: break
-        case Cellar.wishlist.rawValue: break
-        default: break
+            case Cellar.all.rawValue: filterType = "have"; break
+            case Cellar.forTrade.rawValue: filterType = "trade"; break
+            case Cellar.wishlist.rawValue: filterType = "want"; break
+            default: break
+        }
+        QueryClient.sharedClient.fetch(query: UserBeersQuery(filterType: filterType)){ (result, error) in
+            let userBeers = result?.data?.userBeers as! [UserBeersQuery.Data.UserBeer]
+            let temp = userBeers.map({$0.beer! as UserBeersQuery.Data.UserBeer.Beer})
+            self.beers = temp
         }
     }
     
@@ -51,7 +53,7 @@ class BeerListViewModel {
         
         cell.configure(name: beerDetails.name!,
                         brewer: (breweryDetails?.name!)!, // TODO - HAHA LOOK AT THIS
-                        descrip: beerDetails.description!,
+                        descrip: beerDetails.description ?? "This shouldn't be nil",
                         imageURL: URL(string: beerDetails.mediumImage ?? "http://48tk9j3a74jb133e1k2fzz2s.wpengine.netdna-cdn.com/wp-content/uploads/2016/09/Ballast-Point-Coconut-Victory-At-Sea-22-Ounce-Bottle-Label-Feature-.jpg")!)
         return cell
     }
