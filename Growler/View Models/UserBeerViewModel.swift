@@ -33,7 +33,8 @@ class UserBeerViewModel {
         return beer.description!
     }
     
-    public func beerMediumImage() -> URL {
-        return URL(string: beer.mediumImage ?? "http://48tk9j3a74jb133e1k2fzz2s.wpengine.netdna-cdn.com/wp-content/uploads/2016/09/Ballast-Point-Coconut-Victory-At-Sea-22-Ounce-Bottle-Label-Feature-.jpg")!
+    public func beerMediumImage() -> URL? {
+        guard let urlString = beer.mediumImage else { return nil }
+        return URL(string: urlString)
     }
 }

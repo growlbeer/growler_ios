@@ -7,44 +7,65 @@
 //
 
 import UIKit
+import PureLayout
 
 class BeerCell: UICollectionViewCell {
     
     static let kReuseIdentifier = "BeerCell"
-    
-    var name: String
-    var brewer: String
-    var descrip: String
-    var imageURL: URL
     
     let nameLabel = UILabel()
     let brewerLabel = UILabel()
     let descriptionLabel = UILabel()
     let imageView = UIImageView()
     
-    override init(frame: CGRect) {
-        name = ""
-        brewer = ""
-        descrip = ""
-        imageURL = URL(string: "")!
-        super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     private func styleView() {
         backgroundColor = Style.grayLight
     }
     
     public func configure(viewModel: UserBeerViewModel) {
-        name = viewModel.beerName()
-        brewer = viewModel.beerBrewer()
-        descrip = viewModel.beerDescription()
-        imageURL = viewModel.beerMediumImage()
-        self.styleView()
-        print(name)
+        styleView()
+        setupImageView(withURL: viewModel.beerMediumImage())
+        setupNameLabel(withName: viewModel.beerName())
+        setupBrewLabel(withBreweryName: viewModel.beerBrewer())
     }
+    
+    private func setupImageView(withURL url: URL?) {
+        guard let url = url, let data = try? Data(contentsOf: url) else { return }
+        imageView.image = UIImage(data:data)
+        addSubview(imageView)
+        layout(imageView: imageView)
+    }
+    
+    private func setupNameLabel(withName name: String) {
+        nameLabel.text = name
+        addSubview(nameLabel)
+        layout(nameLabel: nameLabel)
+    }
+    
+    private func setupBrewLabel(withBreweryName name: String) {
+        brewerLabel.text = name
+        brewerLabel.numberOfLines = 1
+        brewerLabel.lineBreakMode = .byTruncatingTail
+        addSubview(brewerLabel)
+        layout(brewerLabel: brewerLabel)
+    }
+    
+    private func layout(imageView view: UIImageView) {
+        view.autoPinEdge(.leading, to: .leading, of: self, withOffset: 10)
+        view.autoPinEdge(.top, to: .leading, of: self, withOffset: 10)
+        view.autoSetDimension(.height, toSize: 50)
+        view.autoSetDimension(.width, toSize: 50)
+    }
+    
+    private func layout(nameLabel label: UILabel) {
+        label.autoPinEdge(.leading, to: .leading, of: imageView)
+        label.autoPinEdge(.top, to: .top, of: imageView, withOffset: 5)
+    }
+    
+    private func layout(brewerLabel label: UILabel) {
+        label.autoPinEdge(.leading, to: .leading, of: nameLabel)
+        label.autoPinEdge(.top, to: .bottom, of: nameLabel)
+    }
+    
     
 }

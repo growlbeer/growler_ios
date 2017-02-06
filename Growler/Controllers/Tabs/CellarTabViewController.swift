@@ -54,7 +54,7 @@ class CellarTabViewController: UIViewController {
     
     fileprivate func layout(beerListVC vc: BeerListViewController) {
         vc.view.autoPinEdge(.top, to: .bottom, of: segControl, withOffset: 20)
-        vc.view.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 0,left: 20,bottom: 20,right: 20), excludingEdge: .top)
+        vc.view.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 0, left: 20, bottom: 20, right: 20), excludingEdge: .top)
     }
 
 }
