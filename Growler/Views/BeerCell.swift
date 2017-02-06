@@ -23,11 +23,10 @@ class BeerCell: UICollectionViewCell {
     let imageView = UIImageView()
     
     override init(frame: CGRect) {
-        print("Creating default Beer Cell")
-        self.name = "Default Name"
-        self.brewer = "Default Brewer"
-        self.descrip = "Default Description"
-        self.imageURL = URL(string: "http://48tk9j3a74jb133e1k2fzz2s.wpengine.netdna-cdn.com/wp-content/uploads/2016/09/Ballast-Point-Coconut-Victory-At-Sea-22-Ounce-Bottle-Label-Feature-.jpg")!
+        name = ""
+        brewer = ""
+        descrip = ""
+        imageURL = URL(string: "")!
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     }
     
@@ -39,13 +38,13 @@ class BeerCell: UICollectionViewCell {
         backgroundColor = Style.grayLight
     }
     
-    public func configure(name: String, brewer: String, descrip: String, imageURL: URL) {
-        print("Configuring cell", name)
-        self.name = name
-        self.brewer = brewer
-        self.descrip = descrip
-        self.imageURL = imageURL
+    public func configure(viewModel: UserBeerViewModel) {
+        name = viewModel.beerName()
+        brewer = viewModel.beerBrewer()
+        descrip = viewModel.beerDescription()
+        imageURL = viewModel.beerMediumImage()
         self.styleView()
+        print(name)
     }
     
 }

@@ -31,7 +31,7 @@
 		4D9ABDD11E3BEE2500D18DBF /* BeerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDD01E3BEE2500D18DBF /* BeerListViewModel.swift */; };
 		4D9ABDDC1E3BF67900D18DBF /* BeerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDDB1E3BF67900D18DBF /* BeerListViewController.swift */; };
 		719222E4C276BF11ABAB8F8A /* Pods_Growler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */; };
-		764E0B051E454F88004390E8 /* BeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764E0B041E454F88004390E8 /* BeerViewModel.swift */; };
+		764E0B051E454F88004390E8 /* UserBeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764E0B041E454F88004390E8 /* UserBeerViewModel.swift */; };
 		76DB38EA1E3EC5E4001CF297 /* LibreBaskerville-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76DB38E31E3EC5E4001CF297 /* LibreBaskerville-Bold.ttf */; };
 		76DB38EB1E3EC5E4001CF297 /* LibreBaskerville-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76DB38E41E3EC5E4001CF297 /* LibreBaskerville-Italic.ttf */; };
 		76DB38EC1E3EC5E4001CF297 /* LibreBaskerville-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76DB38E51E3EC5E4001CF297 /* LibreBaskerville-Regular.ttf */; };
@@ -81,7 +81,7 @@
 		4D9ABDD01E3BEE2500D18DBF /* BeerListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeerListViewModel.swift; path = "View Models/BeerListViewModel.swift"; sourceTree = "<group>"; };
 		4D9ABDDB1E3BF67900D18DBF /* BeerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeerListViewController.swift; path = Controllers/Tabs/BeerListViewController.swift; sourceTree = "<group>"; };
 		59281B937F90CEED6D5995AB /* Pods-Growler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Growler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Growler/Pods-Growler.debug.xcconfig"; sourceTree = "<group>"; };
-		764E0B041E454F88004390E8 /* BeerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeerViewModel.swift; path = "View Models/BeerViewModel.swift"; sourceTree = "<group>"; };
+		764E0B041E454F88004390E8 /* UserBeerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBeerViewModel.swift; path = "View Models/UserBeerViewModel.swift"; sourceTree = "<group>"; };
 		76DB38E31E3EC5E4001CF297 /* LibreBaskerville-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Bold.ttf"; sourceTree = "<group>"; };
 		76DB38E41E3EC5E4001CF297 /* LibreBaskerville-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Italic.ttf"; sourceTree = "<group>"; };
 		76DB38E51E3EC5E4001CF297 /* LibreBaskerville-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Regular.ttf"; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				4D9ABDD01E3BEE2500D18DBF /* BeerListViewModel.swift */,
-				764E0B041E454F88004390E8 /* BeerViewModel.swift */,
+				764E0B041E454F88004390E8 /* UserBeerViewModel.swift */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -496,7 +496,7 @@
 				27F0E3E91E344FA9005C32BB /* API.swift in Sources */,
 				4D464D571E258CF200443D3B /* Configuration.swift in Sources */,
 				4D464D641E2834ED00443D3B /* TabBarController.swift in Sources */,
-				764E0B051E454F88004390E8 /* BeerViewModel.swift in Sources */,
+				764E0B051E454F88004390E8 /* UserBeerViewModel.swift in Sources */,
 				4D464D5E1E28341B00443D3B /* TradesTabViewController.swift in Sources */,
 				4D464D601E28342800443D3B /* BeersTabViewController.swift in Sources */,
 				4D464D591E25A1E300443D3B /* Style.swift in Sources */,

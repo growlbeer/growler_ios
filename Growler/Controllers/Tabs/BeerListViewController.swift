@@ -47,7 +47,7 @@ class BeerListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfBeers()
+        return viewModel.numberOfUserBeers()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
