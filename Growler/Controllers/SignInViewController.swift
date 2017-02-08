@@ -37,6 +37,8 @@ class SignInViewController: UIViewController {
         usernameField.autoPinEdge(.leading, to: .leading, of: view, withOffset: 20)
         usernameField.autoPinEdge(.trailing, to: .trailing, of: view, withOffset: -20)
         passwordField.autoPinEdge(.top, to: .bottom, of: usernameField)
+        passwordField.autoAlignAxis(.vertical, toSameAxisOf: view)
         submitButton.autoPinEdge(.top, to: .bottom, of: passwordField)
+        submitButton.autoAlignAxis(.vertical, toSameAxisOf: view)
     }
 }
