@@ -11,7 +11,6 @@ import PureLayout
 
 class CellarTabViewController: UIViewController {
     
-    let signInVC = SignInViewController()
     let beerListVC = BeerListViewController(viewModel: BeerListViewModel())
     let segControl = UISegmentedControl(items: ["All", "For Trade", "Wishlist"])
     let defaults = UserDefaults.standard
@@ -36,7 +35,6 @@ class CellarTabViewController: UIViewController {
     }
     
     fileprivate func setupNotLoggedInView() {
-        print("setupNotLoggedInView")
         let welcomeLabel = UILabel()
         let signupButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
         welcomeLabel.text = "Sorry you're not logged in."
@@ -52,8 +50,7 @@ class CellarTabViewController: UIViewController {
     }
     
     func signupButtonClicked(sender : UIButton) {
-        present(signInVC, animated: true, completion: nil)
-        print("Button clicked!")
+        navigationController?.present(SignInViewController(), animated: true, completion: nil)
     }
     
     fileprivate func setupSegmentedControl() {

@@ -20,18 +20,22 @@ class SignInViewController: UIViewController {
     
     fileprivate func setupView() {
         title = SignInViewController.title()
-        view.backgroundColor = Style.brown
-        print("In SigninViewController")
+        view.backgroundColor = Style.white
         
         let usernameField = UITextField()
         let passwordField = UITextField()
         let submitButton = UIButton()
         
+        usernameField.borderStyle = .line
+        usernameField.placeholder = "Username"
+        
         view.addSubview(usernameField)
         view.addSubview(passwordField)
         view.addSubview(submitButton)
         
-        usernameField.autoPinEdge(toSuperviewEdge: .top, withInset: 10)
+        usernameField.autoPinEdge(.top, to: .top, of: view, withOffset: 40)
+        usernameField.autoPinEdge(.leading, to: .leading, of: view, withOffset: 20)
+        usernameField.autoPinEdge(.trailing, to: .trailing, of: view, withOffset: -20)
         passwordField.autoPinEdge(.top, to: .bottom, of: usernameField)
         submitButton.autoPinEdge(.top, to: .bottom, of: passwordField)
     }
