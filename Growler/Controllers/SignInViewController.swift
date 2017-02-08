@@ -28,6 +28,10 @@ class SignInViewController: UIViewController {
         
         usernameField.borderStyle = .line
         usernameField.placeholder = "Username"
+        passwordField.borderStyle = .line
+        passwordField.placeholder = "Password"
+        submitButton.setTitle("Sign In", for: .normal)
+        submitButton.addTarget(self, action:#selector(self.submitButtonClicked), for: .touchUpInside)
         
         view.addSubview(usernameField)
         view.addSubview(passwordField)
@@ -36,9 +40,14 @@ class SignInViewController: UIViewController {
         usernameField.autoPinEdge(.top, to: .top, of: view, withOffset: 40)
         usernameField.autoPinEdge(.leading, to: .leading, of: view, withOffset: 20)
         usernameField.autoPinEdge(.trailing, to: .trailing, of: view, withOffset: -20)
-        passwordField.autoPinEdge(.top, to: .bottom, of: usernameField)
-        passwordField.autoAlignAxis(.vertical, toSameAxisOf: view)
-        submitButton.autoPinEdge(.top, to: .bottom, of: passwordField)
-        submitButton.autoAlignAxis(.vertical, toSameAxisOf: view)
+        
+        passwordField.autoPinEdge(.top, to: .bottom, of: usernameField, withOffset: 20)
+        passwordField.autoPinEdge(.leading, to: .leading, of: usernameField)
+        
+        submitButton.autoPinEdge(.top, to: .bottom, of: passwordField, withOffset: 20)
+    }
+    
+    func submitButtonClicked() {
+        print("Submit button clicked")
     }
 }
