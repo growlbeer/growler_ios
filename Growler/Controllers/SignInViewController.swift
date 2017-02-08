@@ -32,7 +32,10 @@ class SignInViewController: UIViewController {
         view.addSubview(submitButton)
         
         usernameField.autoPinEdge(toSuperviewEdge: .top, withInset: 10)
+        usernameField.autoAlignAxis(.vertical, toSameAxisOf: view)
         passwordField.autoPinEdge(.top, to: .bottom, of: usernameField)
+        passwordField.autoAlignAxis(.vertical, toSameAxisOf: view)
         submitButton.autoPinEdge(.top, to: .bottom, of: passwordField)
+        submitButton.autoAlignAxis(.vertical, toSameAxisOf: view)
     }
 }
