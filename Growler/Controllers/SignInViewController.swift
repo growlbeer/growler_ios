@@ -31,6 +31,7 @@ class SignInViewController: UIViewController {
         passwordField.borderStyle = .line
         passwordField.placeholder = "Password"
         submitButton.setTitle("Sign In", for: .normal)
+        submitButton.backgroundColor = Style.orange
         submitButton.addTarget(self, action:#selector(self.submitButtonClicked), for: .touchUpInside)
         
         view.addSubview(usernameField)
