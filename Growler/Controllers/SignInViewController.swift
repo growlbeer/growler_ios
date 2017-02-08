@@ -45,6 +45,9 @@ class SignInViewController: UIViewController {
         passwordField.autoPinEdge(.leading, to: .leading, of: usernameField)
         
         submitButton.autoPinEdge(.top, to: .bottom, of: passwordField, withOffset: 20)
+        submitButton.autoPinEdge(.leading, to: .leading, of: passwordField)
+        submitButton.autoPinEdge(.trailing, to: .trailing, of: passwordField)
+        submitButton.autoSetDimension(.height, toSize: 50)
     }
     
     func submitButtonClicked() {
