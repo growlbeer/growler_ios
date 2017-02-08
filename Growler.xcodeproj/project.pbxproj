@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27AC4E491E4AD2810095EB15 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AC4E481E4AD2810095EB15 /* SignInViewController.swift */; };
 		27D552221E46AB670013E258 /* UserBeersQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 27D552211E46AB670013E258 /* UserBeersQuery.graphql */; };
 		27F0E3E91E344FA9005C32BB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0E3E81E344FA9005C32BB /* API.swift */; };
 		4D2F67521E32AD72005D4D0B /* QueryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F67511E32AD72005D4D0B /* QueryClient.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27AC4E481E4AD2810095EB15 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = Controllers/SignInViewController.swift; sourceTree = "<group>"; };
 		27D552211E46AB670013E258 /* UserBeersQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = UserBeersQuery.graphql; path = Queries/UserBeersQuery.graphql; sourceTree = "<group>"; };
 		27F0E3E81E344FA9005C32BB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4D2F67511E32AD72005D4D0B /* QueryClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryClient.swift; path = Utilities/QueryClient.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				4D464D5A1E28338F00443D3B /* Tabs */,
+				27AC4E481E4AD2810095EB15 /* SignInViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				4D9ABDD11E3BEE2500D18DBF /* BeerListViewModel.swift in Sources */,
 				4D464D621E28343700443D3B /* ProfileTabViewController.swift in Sources */,
 				4D2F67521E32AD72005D4D0B /* QueryClient.swift in Sources */,
+				27AC4E491E4AD2810095EB15 /* SignInViewController.swift in Sources */,
 				4D464D301E25873800443D3B /* AppDelegate.swift in Sources */,
 				4D464D5C1E2833EB00443D3B /* CellarTabViewController.swift in Sources */,
 				4D9ABDDC1E3BF67900D18DBF /* BeerListViewController.swift in Sources */,

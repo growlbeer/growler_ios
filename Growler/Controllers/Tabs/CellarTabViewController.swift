@@ -11,8 +11,10 @@ import PureLayout
 
 class CellarTabViewController: UIViewController {
     
+    let signInVC = SignInViewController()
     let beerListVC = BeerListViewController(viewModel: BeerListViewModel())
     let segControl = UISegmentedControl(items: ["All", "For Trade", "Wishlist"])
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +26,34 @@ class CellarTabViewController: UIViewController {
     fileprivate func setupView() {
         title = CellarTabViewController.title()
         view.backgroundColor = Style.white
-        setupSegmentedControl()
-        setupBeerList()
+        let auth_token = defaults.object(forKey: "auth_token")
+        if (auth_token == nil) {
+            setupNotLoggedInView()
+        } else {
+            setupSegmentedControl()
+            setupBeerList()
+        }
+    }
+    
+    fileprivate func setupNotLoggedInView() {
+        print("setupNotLoggedInView")
+        let welcomeLabel = UILabel()
+        let signupButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
+        welcomeLabel.text = "Sorry you're not logged in."
+        signupButton.backgroundColor = .black
+        signupButton.setTitle("Sign In", for: .normal)
+        signupButton.addTarget(self, action:#selector(self.signupButtonClicked), for: .touchUpInside)
+        view.addSubview(welcomeLabel)
+        view.addSubview(signupButton)
+        welcomeLabel.autoPinEdge(toSuperviewEdge: .top, withInset: 50)
+        welcomeLabel.autoAlignAxis(.vertical, toSameAxisOf: view)
+        signupButton.autoPinEdge(.top, to: .bottom, of: welcomeLabel, withOffset: 50)
+        welcomeLabel.autoAlignAxis(.vertical, toSameAxisOf: welcomeLabel)
+    }
+    
+    func signupButtonClicked(sender : UIButton) {
+        present(signInVC, animated: true, completion: nil)
+        print("Button clicked!")
     }
     
     fileprivate func setupSegmentedControl() {
