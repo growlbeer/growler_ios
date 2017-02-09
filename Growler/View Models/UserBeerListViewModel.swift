@@ -13,7 +13,7 @@ enum Cellar: Int {
     case all, forTrade, wishlist
 }
 
-class BeerListViewModel {
+class UserBeerListViewModel {
     
     public var render: ((Void) -> Void)? {
         didSet { render?() }
