@@ -11,18 +11,26 @@ import PureLayout
 
 class CellarTabViewController: UIViewController {
     
-    let beerListVC = BeerListViewController(viewModel: BeerListViewModel())
+    let beerListVC = UserBeerListViewController(viewModel: UserBeerListViewModel())
     let segControl = UISegmentedControl(items: ["All", "For Trade", "Wishlist"])
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nc = NotificationCenter.default
+        nc.addObserver(forName: Notification.Name(rawValue: "user"), object:nil, queue:nil, using:catchUserNotification)
         setupView()
     }
 
     static func title() -> String { return "Cellar" }
 
     fileprivate func setupView() {
+        for v in view.subviews{
+            v.removeFromSuperview()
+        }
+        
+        print("CellarTabView setupView()")
         title = CellarTabViewController.title()
         view.backgroundColor = Style.white
         let auth_token = defaults.object(forKey: "auth_token")
@@ -31,6 +39,21 @@ class CellarTabViewController: UIViewController {
         } else {
             setupSegmentedControl()
             setupBeerList()
+        }
+    }
+    
+    func catchUserNotification(notification: Notification) {
+        print("Catch user notification")
+        
+        guard let userInfo = notification.userInfo,
+              let event = userInfo["event"] as? String
+        else {
+              print("no user info fond in notification")
+              return
+        }
+        
+        if (event == "login" || event == "logout") {
+            viewDidLoad()
         }
     }
     
@@ -50,7 +73,7 @@ class CellarTabViewController: UIViewController {
     }
     
     func signupButtonClicked(sender : UIButton) {
-        navigationController?.present(SignInViewController(), animated: true, completion: nil)
+        navigationController?.pushViewController(SignInViewController(), animated: true)
     }
     
     fileprivate func setupSegmentedControl() {
@@ -77,7 +100,7 @@ class CellarTabViewController: UIViewController {
         segControl.autoAlignAxis(.vertical, toSameAxisOf: view)
     }
     
-    fileprivate func layout(beerListVC vc: BeerListViewController) {
+    fileprivate func layout(beerListVC vc: UserBeerListViewController) {
         vc.view.autoPinEdge(.top, to: .bottom, of: segControl, withOffset: 20)
         vc.view.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 0, left: 20, bottom: 20, right: 20), excludingEdge: .top)
     }

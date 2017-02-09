@@ -9,7 +9,10 @@
 import UIKit
 import PureLayout
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController {    
+    let usernameField = UITextField()
+    let passwordField = UITextField()
+    let submitButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +25,13 @@ class SignInViewController: UIViewController {
         title = SignInViewController.title()
         view.backgroundColor = Style.white
         
-        let usernameField = UITextField()
-        let passwordField = UITextField()
-        let submitButton = UIButton()
-        
         usernameField.borderStyle = .line
+        usernameField.autocapitalizationType = UITextAutocapitalizationType.none
         usernameField.placeholder = "Username"
         passwordField.borderStyle = .line
         passwordField.placeholder = "Password"
+        passwordField.autocapitalizationType = UITextAutocapitalizationType.none
+        //passwordField.isSecureTextEntry = true
         submitButton.setTitle("Sign In", for: .normal)
         submitButton.backgroundColor = Style.orange
         submitButton.addTarget(self, action:#selector(self.submitButtonClicked), for: .touchUpInside)
@@ -44,6 +46,7 @@ class SignInViewController: UIViewController {
         
         passwordField.autoPinEdge(.top, to: .bottom, of: usernameField, withOffset: 20)
         passwordField.autoPinEdge(.leading, to: .leading, of: usernameField)
+        passwordField.autoPinEdge(.trailing, to: .trailing, of: usernameField)
         
         submitButton.autoPinEdge(.top, to: .bottom, of: passwordField, withOffset: 20)
         submitButton.autoPinEdge(.leading, to: .leading, of: passwordField)
@@ -52,6 +55,17 @@ class SignInViewController: UIViewController {
     }
     
     func submitButtonClicked() {
-        print("Submit button clicked")
+        QueryClient.sharedClient().perform(mutation: LoginMutation(input: LoginInput(email: usernameField.text!, password: passwordField.text!))) { (result, error) in
+            let authToken = result?.data?.login?.user?.authToken
+            let defaults = UserDefaults.standard
+            defaults.set(authToken, forKey: "auth_token")
+            
+            let nc = NotificationCenter.default
+            nc.post(name: Notification.Name(rawValue: "user"),
+                    object: nil,
+                    userInfo:["event":"login"])
+            self.navigationController?.popViewController(animated: true)
+            
+        }
     }
 }

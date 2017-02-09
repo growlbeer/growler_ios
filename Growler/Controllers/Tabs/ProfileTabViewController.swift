@@ -20,6 +20,25 @@ class ProfileTabViewController: UIViewController {
     fileprivate func setupView() {
         title = ProfileTabViewController.title()
         view.backgroundColor = Style.white
+        
+        let logoutButton = UIButton()
+        logoutButton.backgroundColor = .orange
+        logoutButton.setTitle("Sign Out", for: .normal)
+        logoutButton.addTarget(self, action:#selector(self.logoutButtonClicked), for: .touchUpInside)
+        view.addSubview(logoutButton)
+        logoutButton.autoPinEdge(toSuperviewEdge: .top, withInset: 50)
+        logoutButton.autoAlignAxis(.vertical, toSameAxisOf: view)
+    }
+    
+    func logoutButtonClicked() {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: "auth_token")
+        
+        let nc = NotificationCenter.default
+        nc.post(name: Notification.Name(rawValue: "user"),
+                object: nil,
+                userInfo:["event":"logout"])
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

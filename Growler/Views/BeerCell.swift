@@ -52,13 +52,13 @@ class BeerCell: UICollectionViewCell {
     
     private func layout(imageView view: UIImageView) {
         view.autoPinEdge(.leading, to: .leading, of: self, withOffset: 10)
-        view.autoPinEdge(.top, to: .leading, of: self, withOffset: 10)
+        view.autoPinEdge(.top, to: .top, of: self, withOffset: 10)
         view.autoSetDimension(.height, toSize: 50)
         view.autoSetDimension(.width, toSize: 50)
     }
     
     private func layout(nameLabel label: UILabel) {
-        label.autoPinEdge(.leading, to: .leading, of: imageView)
+        label.autoPinEdge(.leading, to: .trailing, of: imageView, withOffset: 10)
         label.autoPinEdge(.top, to: .top, of: imageView, withOffset: 5)
     }
     

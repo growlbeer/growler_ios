@@ -8,12 +8,12 @@
 
 import UIKit
 
-class BeerListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class UserBeerListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
-    let viewModel: BeerListViewModel
+    let viewModel: UserBeerListViewModel
     var collectionView: UICollectionView?
     
-    init(viewModel: BeerListViewModel) {
+    init(viewModel: UserBeerListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
