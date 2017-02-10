@@ -12,6 +12,8 @@
 		27F0E3E91E344FA9005C32BB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0E3E81E344FA9005C32BB /* API.swift */; };
 		4D2F67521E32AD72005D4D0B /* QueryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F67511E32AD72005D4D0B /* QueryClient.swift */; };
 		4D2F67541E32B707005D4D0B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F67531E32B707005D4D0B /* Constants.swift */; };
+		4D3A927A1E4E66D600AF0AF2 /* UIImageView+Growler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A92791E4E66D600AF0AF2 /* UIImageView+Growler.swift */; };
+		4D3A927D1E4E727C00AF0AF2 /* UnauthorizedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A927C1E4E727C00AF0AF2 /* UnauthorizedView.swift */; };
 		4D464D301E25873800443D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D2F1E25873800443D3B /* AppDelegate.swift */; };
 		4D464D371E25873800443D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D464D361E25873800443D3B /* Assets.xcassets */; };
 		4D464D3A1E25873800443D3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D464D381E25873800443D3B /* LaunchScreen.storyboard */; };
@@ -59,6 +61,8 @@
 		27F0E3E81E344FA9005C32BB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4D2F67511E32AD72005D4D0B /* QueryClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryClient.swift; path = Utilities/QueryClient.swift; sourceTree = "<group>"; };
 		4D2F67531E32B707005D4D0B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utilities/Constants.swift; sourceTree = "<group>"; };
+		4D3A92791E4E66D600AF0AF2 /* UIImageView+Growler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+Growler.swift"; path = "Utilities/Extensions/UIImageView+Growler.swift"; sourceTree = "<group>"; };
+		4D3A927C1E4E727C00AF0AF2 /* UnauthorizedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnauthorizedView.swift; path = Views/UnauthorizedView.swift; sourceTree = "<group>"; };
 		4D464D2C1E25873800443D3B /* Growler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Growler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D464D2F1E25873800443D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Supporting Files/AppDelegate.swift"; sourceTree = "<group>"; };
 		4D464D361E25873800443D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets/Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +125,15 @@
 				C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D3A927B1E4E725F00AF0AF2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4D9ABDC51E3BD2D100D18DBF /* BeerCell.swift */,
+				4D9ABDC71E3BD2E200D18DBF /* TradeCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		4D464D231E25873800443D3B = {
@@ -187,8 +200,8 @@
 		4D464D501E258BAA00443D3B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4D9ABDC51E3BD2D100D18DBF /* BeerCell.swift */,
-				4D9ABDC71E3BD2E200D18DBF /* TradeCell.swift */,
+				4D3A927B1E4E725F00AF0AF2 /* Cells */,
+				4D3A927C1E4E727C00AF0AF2 /* UnauthorizedView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -300,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				76DB38F21E3ED277001CF297 /* UIImage+Growler.swift */,
+				4D3A92791E4E66D600AF0AF2 /* UIImageView+Growler.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -508,10 +522,12 @@
 				4D9ABDC81E3BD2E200D18DBF /* TradeCell.swift in Sources */,
 				4D9ABDD11E3BEE2500D18DBF /* BeerListViewModel.swift in Sources */,
 				4D464D621E28343700443D3B /* ProfileTabViewController.swift in Sources */,
+				4D3A927A1E4E66D600AF0AF2 /* UIImageView+Growler.swift in Sources */,
 				4D2F67521E32AD72005D4D0B /* QueryClient.swift in Sources */,
 				27AC4E491E4AD2810095EB15 /* SignInViewController.swift in Sources */,
 				4D464D301E25873800443D3B /* AppDelegate.swift in Sources */,
 				4D464D5C1E2833EB00443D3B /* CellarTabViewController.swift in Sources */,
+				4D3A927D1E4E727C00AF0AF2 /* UnauthorizedView.swift in Sources */,
 				4D9ABDDC1E3BF67900D18DBF /* BeerListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

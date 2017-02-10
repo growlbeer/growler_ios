@@ -12,7 +12,7 @@ struct Constants {
     
     // MARK: URLs
     
-    static let kQueryURL = "http://localhost:3000/queries" //"http://api.growl.beer/queries"
+    static let kQueryURL = "http://api.growl.beer/queries"
     
     // MARK: Font names
     
@@ -23,4 +23,7 @@ struct Constants {
     static let kRegularSerifFontName    = "LibreBaskerville-Regular"
     static let kBoldSerifFontName       = "LibreBaskerville-Bold"
     static let kItalicSerifFontName     = "LibreBaskerville-Light"
+    
+    // MARK: User Defaults
+    static let kUserAuthTokenKey        = "auth_token"
 }

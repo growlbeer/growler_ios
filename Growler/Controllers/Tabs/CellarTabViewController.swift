@@ -19,38 +19,30 @@ class CellarTabViewController: UIViewController {
         super.viewDidLoad()
         setupView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureAuthenticationState()
+    }
 
     static func title() -> String { return "Cellar" }
 
     fileprivate func setupView() {
         title = CellarTabViewController.title()
         view.backgroundColor = Style.white
-        let auth_token = defaults.object(forKey: "auth_token")
-        if (auth_token == nil) {
-            setupNotLoggedInView()
-        } else {
-            setupSegmentedControl()
-            setupBeerList()
-        }
+        setupSegmentedControl()
     }
     
-    fileprivate func setupNotLoggedInView() {
-        let welcomeLabel = UILabel()
-        let signupButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
-        welcomeLabel.text = "Sorry you're not logged in."
-        signupButton.backgroundColor = .black
-        signupButton.setTitle("Sign In", for: .normal)
-        signupButton.addTarget(self, action:#selector(self.signupButtonClicked), for: .touchUpInside)
-        view.addSubview(welcomeLabel)
-        view.addSubview(signupButton)
-        welcomeLabel.autoPinEdge(toSuperviewEdge: .top, withInset: 50)
-        welcomeLabel.autoAlignAxis(.vertical, toSameAxisOf: view)
-        signupButton.autoPinEdge(.top, to: .bottom, of: welcomeLabel, withOffset: 50)
-        welcomeLabel.autoAlignAxis(.vertical, toSameAxisOf: welcomeLabel)
+    fileprivate func configureAuthenticationState() {
+        guard let _ = defaults.object(forKey: Constants.kUserAuthTokenKey) else { showUnauthorizedView(); return }
+        setupBeerList()
     }
     
-    func signupButtonClicked(sender : UIButton) {
-        navigationController?.present(SignInViewController(), animated: true, completion: nil)
+    fileprivate func showUnauthorizedView() {
+        let alert = "To start adding beers to your cellar"
+        let unauthedView = UnauthorizedView(alert: alert)
+        view.addSubview(unauthedView)
+        unauthedView.autoPinEdgesToSuperviewEdges()
     }
     
     fileprivate func setupSegmentedControl() {

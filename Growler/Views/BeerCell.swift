@@ -29,9 +29,8 @@ class BeerCell: UICollectionViewCell {
         setupBrewLabel(withBreweryName: viewModel.beerBrewer())
     }
     
-    private func setupImageView(withURL url: URL?) {
-        guard let url = url, let data = try? Data(contentsOf: url) else { return }
-        imageView.image = UIImage(data:data)
+    private func setupImageView(withURL url: String) {
+        imageView.setImage(fromURL: url)
         addSubview(imageView)
         layout(imageView: imageView)
     }
