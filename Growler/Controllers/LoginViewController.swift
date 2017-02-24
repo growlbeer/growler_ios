@@ -13,13 +13,14 @@ class LoginViewController: UIViewController {
     
     static let sharedInstance = LoginViewController()
     
-    let usernameField = UITextField()
-    let passwordField = UITextField()
-    let submitButton = UIButton()
+    fileprivate let usernameField = UITextField()
+    fileprivate let passwordField = UITextField()
+    fileprivate let submitButton = UIButton()
     
     static func showLogin(withNavigationController navVC: UINavigationController?) {
         guard let navVC = navVC else { return }
-        navVC.present(LoginViewController.sharedInstance, animated: true, completion: nil)
+        let nav = UINavigationController(rootViewController: LoginViewController.sharedInstance)
+        navVC.present(nav, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -30,9 +31,14 @@ class LoginViewController: UIViewController {
     fileprivate func setupView() {
         title = "Log In"
         view.backgroundColor = Style.white
+        setupCloseButton()
         setupUsernameField()
         setupPassworldField()
         setupSubmitButton()
+    }
+    
+    fileprivate func setupCloseButton() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Close"), style: .plain, target: self, action: #selector(close))
     }
     
     fileprivate func setupUsernameField() {
@@ -58,7 +64,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc fileprivate func submitTapped() {
-        print("submit tapped")
+        login(withUsername: usernameField.text, password: passwordField.text)
     }
     
     fileprivate func layoutUsernameField() {
@@ -72,10 +78,15 @@ class LoginViewController: UIViewController {
     }
     
     fileprivate func layoutSubmitButton() {
-        submitButton.autoPinEdge(.top, to: .bottom, of: passwordField, withOffset: 20)
-        submitButton.autoPinEdge(.leading, to: .leading, of: usernameField)
-        submitButton.autoPinEdge(.trailing, to: .trailing, of: usernameField)
+        submitButton.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets.zero, excludingEdge: .top)
         submitButton.autoSetDimension(.height, toSize: 50)
     }
+    
+    fileprivate func login(withUsername username: String?, password: String?) {
+        guard let username = username, let password = password else { return /* handle error */ }
+        // handle login
+    }
+    
+    @objc fileprivate func close() { dismiss(animated: true, completion: nil) }
 
 }
