@@ -11,16 +11,27 @@ import PureLayout
 
 class UnauthorizedView: UIView {
     
-    var alertText: String = "Please log in or sign up to access this content"
+    typealias TapHandler = (Void) -> ()
+    
+    var alertText: String
+    var loginHandler: TapHandler
+    var signupHandler: TapHandler
+    
     let alertLabel = UILabel()
     let loginLabel = UILabel()
     let loginButton = UIButton()
     let signupButton = UIButton()
     
-    convenience init(alert: String) {
-        self.init()
-        alertText = alert
+    init(alert: String, loginHandler: @escaping TapHandler, signupHandler: @escaping TapHandler) {
+        self.alertText = alert
+        self.loginHandler = loginHandler
+        self.signupHandler = signupHandler
+        super.init(frame: .zero)
         setupView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     fileprivate func setupView() {
@@ -91,8 +102,6 @@ class UnauthorizedView: UIView {
         loginButton.autoAlignAxis(.vertical, toSameAxisOf: signupButton)
     }
     
-    @objc fileprivate func loginTapped(sender : UIButton) { /* callback */ }
-    
-    @objc fileprivate func signupTapped(sender : UIButton) { /* callback */ }
-
+    @objc fileprivate func loginTapped() { loginHandler() }
+    @objc fileprivate func signupTapped() { signupHandler() }
 }

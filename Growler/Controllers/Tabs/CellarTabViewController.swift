@@ -39,8 +39,9 @@ class CellarTabViewController: UIViewController {
     }
     
     fileprivate func showUnauthorizedView() {
-        let alert = "To start adding beers to your cellar you must create an account"
-        let unauthedView = UnauthorizedView(alert: alert)
+        let unauthedView = UnauthorizedView(alert: "To start adding beers to your cellar you must create an account",
+                            loginHandler: { [weak self] _ in LoginViewController.showLogin(withNavigationController: self?.navigationController) },
+                            signupHandler: { _ in print("signupTapped") })
         view.addSubview(unauthedView)
         unauthedView.autoPinEdgesToSuperviewEdges()
     }
