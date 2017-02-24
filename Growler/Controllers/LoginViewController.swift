@@ -42,15 +42,14 @@ class LoginViewController: UIViewController {
     }
     
     fileprivate func setupUsernameField() {
-        usernameField.borderStyle = .line
         usernameField.placeholder = "Username"
         view.addSubview(usernameField)
         layoutUsernameField()
     }
     
     fileprivate func setupPassworldField() {
-        passwordField.borderStyle = .line
         passwordField.placeholder = "Password"
+        passwordField.isSecureTextEntry = true
         view.addSubview(passwordField)
         layoutPasswordField()
     }
