@@ -55,8 +55,8 @@ class LoginViewController: UIViewController {
     }
     
     fileprivate func setupSubmitButton() {
-        submitButton.setTitle("Log In", for: .normal)
-        submitButton.backgroundColor = Style.orange
+        submitButton.setBackground(withColor: Style.orange)
+        submitButton.setTitle("Log In", color: Style.white, font: Style.semiBoldSansFont(withSize: 16))
         submitButton.addTarget(self, action:#selector(submitTapped), for: .touchUpInside)
         view.addSubview(submitButton)
         layoutSubmitButton()
@@ -71,7 +71,7 @@ class LoginViewController: UIViewController {
     }
     
     fileprivate func layoutPasswordField() {
-        passwordField.autoPinEdge(.top, to: .bottom, of: usernameField, withOffset: 20)
+        passwordField.autoPinEdge(.top, to: .bottom, of: usernameField, withOffset: 40)
         passwordField.autoPinEdge(.leading, to: .leading, of: usernameField)
         passwordField.autoPinEdge(.trailing, to: .trailing, of: usernameField)
     }

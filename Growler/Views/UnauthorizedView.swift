@@ -43,11 +43,10 @@ class UnauthorizedView: UIView {
     }
     
     fileprivate func setupSignupButton() {
-        signupButton.backgroundColor = Style.orange
+        signupButton.setBackground(withColor: Style.orange)
+        signupButton.setTitle("Get Started", color: Style.white, font: Style.semiBoldSansFont(withSize: 16))
         signupButton.clipsToBounds = true
         signupButton.layer.cornerRadius = 25
-        signupButton.setTitle("Get Started", for: .normal)
-        signupButton.setTitleColor(Style.white, for: .normal)
         signupButton.addTarget(self, action:#selector(signupTapped), for: .touchUpInside)
         addSubview(signupButton)
         layoutSignupButton()
@@ -78,7 +77,7 @@ class UnauthorizedView: UIView {
     fileprivate func setupLoginLabel() {
         loginLabel.text = "Already have an account?"
         loginLabel.textAlignment = .center
-        loginLabel.font = Style.regularSansFont(withSize: 14)
+        loginLabel.font = Style.semiBoldSansFont(withSize: 14)
         addSubview(loginLabel)
         layoutLoginLabel()
     }
@@ -90,8 +89,8 @@ class UnauthorizedView: UIView {
     }
     
     fileprivate func setupLoginButton() {
-        loginButton.setTitle("Log In", for: .normal)
-        loginButton.setTitleColor(Style.orange, for: .normal)
+        loginButton.backgroundColor = Style.white
+        loginButton.setTitle("Log In", color: Style.orange, font: Style.regularSansFont(withSize: 14))
         loginButton.addTarget(self, action:#selector(loginTapped), for: .touchUpInside)
         addSubview(loginButton)
         layoutLoginButton()

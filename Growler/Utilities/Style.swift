@@ -20,7 +20,6 @@ struct Style {
     static let black        = UIColor(red: 24/255, green: 24/255, blue: 24/255, alpha: 1)
     
     // MARK: Fonts
-    
     static func regularSansFont(withSize size: CGFloat) -> UIFont {
         return UIFont(name: Constants.kRegularSansFontName, size: size)!
     }
@@ -50,10 +49,10 @@ struct Style {
     }
     
     // MARK: Theme UI
-    
     static func themeUI() {
         themeUINavigationBar()
         themeUISegmentedControl()
+        themeUITextField()
         themeTabBar()
     }
     
@@ -63,7 +62,10 @@ struct Style {
         UINavigationBar.appearance().barTintColor = Style.white
         UINavigationBar.appearance().tintColor = Style.gray
         UINavigationBar.appearance().isTranslucent = false
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: Style.black, NSFontAttributeName: Style.regularSerifFont(withSize: 18.0)]
+        let titleDict: NSDictionary = [
+            NSForegroundColorAttributeName: Style.black,
+            NSFontAttributeName: Style.regularSerifFont(withSize: 18.0)
+        ]
         UINavigationBar.appearance().titleTextAttributes = titleDict as? [String : AnyObject]
         UINavigationBar.appearance().backIndicatorImage = UIImage(named: "Back")
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "Back")
@@ -75,25 +77,39 @@ struct Style {
         UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
     }
     
+    static private func themeUITextField() {
+        UITextField.appearance().tintColor = Style.orange
+        UITextField.appearance().font = Style.lightSansFont(withSize: 18)
+        Style.addBottomBorder(toLayer: UITextField.appearance().layer, onFrame: UITextField.appearance().frame, color: Style.gray.cgColor)
+    }
+    
     static private func themeTabBar() {
         UITabBar.appearance().backgroundImage = UIImage()
         UITabBar.appearance().shadowImage = UIImage.image(fromColor: Style.grayLight)
         UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().tintColor = Style.brown
         UITabBar.appearance().barTintColor = Style.white
-        
         let attrsNormal = [
             NSForegroundColorAttributeName : Style.brown,
             NSFontAttributeName : Style.regularSansFont(withSize: 14.0)
         ]
-        
         let attrsSelected = [
             NSForegroundColorAttributeName : Style.orange,
             NSFontAttributeName : Style.regularSansFont(withSize: 14.0)
         ]
-        
         UITabBarItem.appearance().setTitleTextAttributes(attrsNormal, for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes(attrsSelected, for: .selected)
+    }
+    
+    // MARK: Helpers
+    static func addBottomBorder(toLayer layer: CALayer, onFrame frame: CGRect, color: CGColor) {
+        let border = CALayer()
+        let width = CGFloat(1.0)
+        border.borderColor = color
+        border.frame = CGRect(x: 0, y: frame.size.height - width, width: frame.size.width, height: frame.size.height)
+        border.borderWidth = width
+        layer.addSublayer(border)
+        layer.masksToBounds = true
     }
     
 }
