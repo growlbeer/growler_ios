@@ -16,6 +16,7 @@ class BeerListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     init(viewModel: BeerListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        viewModel.render = { [weak self] _ in self?.collectionView?.reloadData() }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,22 +25,26 @@ class BeerListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.render = { [weak self] _ in print("view model render complete"); self?.collectionView?.reloadData() }
         setupCollectionView()
     }
     
     fileprivate func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-        layout.itemSize = CGSize(width: view.frame.width, height: 120)
+        layout.itemSize = CGSize(width: view.frame.width - 20, height: BeerCell.cellSize)
         
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         guard let collectionView = collectionView else { return }
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = Style.orange
+        collectionView.backgroundColor = Style.white
         registerCells(forCollectionView: collectionView)
         view.addSubview(collectionView)
+        layoutCollectionView()
+    }
+    
+    fileprivate func layoutCollectionView() {
+        collectionView?.autoPinEdgesToSuperviewEdges()
     }
     
     fileprivate func registerCells(forCollectionView collectionView: UICollectionView) {
@@ -51,7 +56,7 @@ class BeerListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BeerCell.kReuseIdentifier, for: indexPath) as! BeerCell
-        return viewModel.configureCell(forIndexPath: indexPath, cell: cell)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BeerCell.kReuseIdentifier, for: indexPath) as? BeerCell else { return UICollectionViewCell() }
+        return viewModel.cell(forIndexPath: indexPath, cell: cell)
     }
 }

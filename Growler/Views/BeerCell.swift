@@ -12,6 +12,7 @@ import PureLayout
 class BeerCell: UICollectionViewCell {
     
     static let kReuseIdentifier = "BeerCell"
+    static let cellSize: CGFloat = 120
     
     let nameLabel = UILabel()
     let brewerLabel = UILabel()
@@ -27,44 +28,74 @@ class BeerCell: UICollectionViewCell {
         setupImageView(withURL: viewModel.beerMediumImage())
         setupNameLabel(withName: viewModel.beerName())
         setupBrewLabel(withBreweryName: viewModel.beerBrewer())
+        setupDescriptionLabel(withDescription: viewModel.beerDescription())
     }
     
     private func setupImageView(withURL url: String) {
         imageView.setImage(fromURL: url)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         addSubview(imageView)
         layout(imageView: imageView)
     }
     
     private func setupNameLabel(withName name: String) {
         nameLabel.text = name
+        nameLabel.font = Style.semiBoldSansFont(withSize: 16)
+        brewerLabel.numberOfLines = 0
+        brewerLabel.lineBreakMode = .byTruncatingTail
         addSubview(nameLabel)
         layout(nameLabel: nameLabel)
     }
     
     private func setupBrewLabel(withBreweryName name: String) {
         brewerLabel.text = name
+        brewerLabel.font = Style.lightSansFont(withSize: 16)
         brewerLabel.numberOfLines = 1
         brewerLabel.lineBreakMode = .byTruncatingTail
         addSubview(brewerLabel)
         layout(brewerLabel: brewerLabel)
     }
     
+    private func setupDescriptionLabel(withDescription desc: String) {
+        descriptionLabel.text = desc
+        descriptionLabel.font = Style.regularSerifFont(withSize: 12)
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.lineBreakMode = .byTruncatingTail
+        addSubview(descriptionLabel)
+        layout(descriptionLabel: descriptionLabel)
+    }
+    
     private func layout(imageView view: UIImageView) {
-        view.autoPinEdge(.leading, to: .leading, of: self, withOffset: 10)
-        view.autoPinEdge(.top, to: .leading, of: self, withOffset: 10)
-        view.autoSetDimension(.height, toSize: 50)
-        view.autoSetDimension(.width, toSize: 50)
+        view.autoPinEdgesToSuperviewEdges(with: UIEdgeInsetsMake(3, 3, 3, 0), excludingEdge: .trailing)
+        view.autoSetDimension(.width, toSize: BeerCell.cellSize)
     }
     
     private func layout(nameLabel label: UILabel) {
-        label.autoPinEdge(.leading, to: .leading, of: imageView)
-        label.autoPinEdge(.top, to: .top, of: imageView, withOffset: 5)
+        label.autoPinEdge(.leading, to: .trailing, of: imageView, withOffset: 10)
+        label.autoPinEdge(.trailing, to: .trailing, of: self, withOffset: 10)
+        label.autoPinEdge(.top, to: .top, of: self, withOffset: 10)
     }
     
     private func layout(brewerLabel label: UILabel) {
         label.autoPinEdge(.leading, to: .leading, of: nameLabel)
+        label.autoPinEdge(.trailing, to: .trailing, of: nameLabel)
         label.autoPinEdge(.top, to: .bottom, of: nameLabel)
     }
     
+    private func layout(descriptionLabel label: UILabel) {
+        label.autoPinEdge(.leading, to: .leading, of: nameLabel)
+        label.autoPinEdge(.trailing, to: .trailing, of: nameLabel)
+        label.autoPinEdge(.top, to: .bottom, of: brewerLabel)
+        label.autoPinEdge(.bottom, to: .bottom, of: self, withOffset: 10)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        nameLabel.removeFromSuperview()
+        brewerLabel.removeFromSuperview()
+        descriptionLabel.removeFromSuperview()
+        imageView.removeFromSuperview()
+    }
     
 }

@@ -14,18 +14,12 @@ enum Cellar: Int {
 }
 
 class BeerListViewModel {
+
+    public var render: ((Void) -> Void)? { didSet { render?() } }
     
-    public var render: ((Void) -> Void)? {
-        didSet { render?() }
-    }
+    fileprivate var userBeers: [UserBeersQuery.Data.UserBeer] = [] { didSet { render?() } }
     
-    fileprivate var userBeers: [UserBeersQuery.Data.UserBeer] = [] {
-        didSet { render?() }
-    }
-    
-    init() {
-        query(forIndex: Cellar.all.rawValue)
-    }
+    init() { query(forIndex: Cellar.all.rawValue) }
     
     public func query(forIndex index: Int) {
         var filterType = "have"
@@ -43,12 +37,8 @@ class BeerListViewModel {
     
     public func numberOfUserBeers() -> Int { return userBeers.count }
     
-    fileprivate func userBeerViewModel(forUserBeer userBeer: UserBeersQuery.Data.UserBeer) -> UserBeerViewModel {
-        return UserBeerViewModel(userBeer: userBeer)
-    }
-    
-    public func configureCell(forIndexPath indexPath: IndexPath, cell: BeerCell) -> UICollectionViewCell {
-        let viewModel = userBeerViewModel(forUserBeer: userBeers[indexPath.row])
+    public func cell(forIndexPath indexPath: IndexPath, cell: BeerCell) -> UICollectionViewCell {
+        let viewModel = UserBeerViewModel(userBeer: userBeers[indexPath.row])
         cell.configure(viewModel: viewModel)
         return cell
     }
