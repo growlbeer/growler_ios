@@ -87,15 +87,15 @@ struct Style {
         UITabBar.appearance().backgroundImage = UIImage()
         UITabBar.appearance().shadowImage = UIImage.image(fromColor: Style.grayLight)
         UITabBar.appearance().isTranslucent = false
-        UITabBar.appearance().tintColor = Style.brown
+        UITabBar.appearance().tintColor = Style.gray
         UITabBar.appearance().barTintColor = Style.white
         let attrsNormal = [
-            NSForegroundColorAttributeName : Style.brown,
-            NSFontAttributeName : Style.regularSansFont(withSize: 14.0)
+            NSForegroundColorAttributeName : Style.gray,
+            NSFontAttributeName : Style.regularSansFont(withSize: 12)
         ]
         let attrsSelected = [
             NSForegroundColorAttributeName : Style.orange,
-            NSFontAttributeName : Style.regularSansFont(withSize: 14.0)
+            NSFontAttributeName : Style.regularSansFont(withSize: 12)
         ]
         UITabBarItem.appearance().setTitleTextAttributes(attrsNormal, for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes(attrsSelected, for: .selected)

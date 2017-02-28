@@ -30,6 +30,11 @@ class LoginViewController: UIViewController {
         setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        validateTextFields()
+    }
+    
     fileprivate func setupView() {
         title = "Log In"
         view.backgroundColor = Style.white
@@ -44,13 +49,19 @@ class LoginViewController: UIViewController {
     }
     
     fileprivate func setupUsernameField() {
+        usernameField.delegate = self
+        usernameField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         usernameField.placeholder = "Username"
+        usernameField.autocapitalizationType = .none
         view.addSubview(usernameField)
         layoutUsernameField()
     }
     
     fileprivate func setupPassworldField() {
+        passwordField.delegate = self
+        passwordField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         passwordField.placeholder = "Password"
+        passwordField.autocapitalizationType = .none
         passwordField.isSecureTextEntry = true
         view.addSubview(passwordField)
         layoutPasswordField()
@@ -85,13 +96,28 @@ class LoginViewController: UIViewController {
     
     fileprivate func login(withUsername username: String?, password: String?) {
         guard let username = username, let password = password else { return /* handle error */ }
-        QueryClient.sharedClient().perform(mutation: LoginMutation(input: LoginInput(email: username, password: password))) { (result, error) in
-            let authToken = result?.data?.login?.user?.fragments.userDetails.authToken
-            self.defaults.set(authToken, forKey: Constants.kUserAuthTokenKey)
-            self.close()
+        QueryClient.sharedClient().perform(mutation: LoginMutation(input: LoginInput(email: username, password: password))) { [weak self] result, error in
+            guard let authToken = result?.data?.login?.user?.fragments.userDetails.authToken else { self?.handleError(error); return }
+            self?.defaults.set(authToken, forKey: Constants.kUserAuthTokenKey)
+            self?.close()
         }
+    }
+    
+    fileprivate func handleError(_ error: Error?) {
+        guard let error = error else { return }
+        dump(error.localizedDescription)
     }
     
     @objc fileprivate func close() { dismiss(animated: true, completion: nil) }
 
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    @objc fileprivate func textFieldDidChange() { validateTextFields() }
+    
+    fileprivate func validateTextFields() {
+        guard let userText = usernameField.text, userText.characters.count > 0,
+            let passwordText = passwordField.text, passwordText.characters.count > 0 else { submitButton.isEnabled = false; return }
+        submitButton.isEnabled = true
+    }
 }
