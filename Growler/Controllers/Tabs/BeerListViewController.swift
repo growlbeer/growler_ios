@@ -32,7 +32,6 @@ class BeerListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         layout.itemSize = CGSize(width: view.frame.width - 20, height: BeerCell.cellSize)
-        
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         guard let collectionView = collectionView else { return }
         collectionView.dataSource = self

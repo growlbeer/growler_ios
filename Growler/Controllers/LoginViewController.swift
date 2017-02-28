@@ -115,6 +115,10 @@ class LoginViewController: UIViewController {
     
     fileprivate func handleError(_ error: Error?) {
         guard let error = error else { return }
+        UIAlertController().showError(withTitle: "Login Failed",
+                                      message: "Please ensure your email & password are correct and try again.",
+                                      onNavigationController: navigationController,
+                                      completion: nil)
         dump(error.localizedDescription)
     }
     

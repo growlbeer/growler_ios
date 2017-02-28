@@ -25,6 +25,7 @@
 		4D464D601E28342800443D3B /* BeersTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D5F1E28342800443D3B /* BeersTabViewController.swift */; };
 		4D464D621E28343700443D3B /* ProfileTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D611E28343700443D3B /* ProfileTabViewController.swift */; };
 		4D464D641E2834ED00443D3B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D464D631E2834ED00443D3B /* TabBarController.swift */; };
+		4D59DBE61E6608DA0014D629 /* UIAlertController+Growler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D59DBE51E6608DA0014D629 /* UIAlertController+Growler.swift */; };
 		4D926F411E31796400686AAC /* BeersQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4D926F401E31796400686AAC /* BeersQuery.graphql */; };
 		4D9ABDC61E3BD2D100D18DBF /* BeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDC51E3BD2D100D18DBF /* BeerCell.swift */; };
 		4D9ABDC81E3BD2E200D18DBF /* TradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABDC71E3BD2E200D18DBF /* TradeCell.swift */; };
@@ -82,6 +83,7 @@
 		4D464D5F1E28342800443D3B /* BeersTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeersTabViewController.swift; path = Controllers/Tabs/BeersTabViewController.swift; sourceTree = "<group>"; };
 		4D464D611E28343700443D3B /* ProfileTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTabViewController.swift; path = Controllers/Tabs/ProfileTabViewController.swift; sourceTree = "<group>"; };
 		4D464D631E2834ED00443D3B /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Controllers/Tabs/TabBarController.swift; sourceTree = "<group>"; };
+		4D59DBE51E6608DA0014D629 /* UIAlertController+Growler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIAlertController+Growler.swift"; path = "Utilities/Extensions/UIAlertController+Growler.swift"; sourceTree = "<group>"; };
 		4D926F401E31796400686AAC /* BeersQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BeersQuery.graphql; path = Queries/BeersQuery.graphql; sourceTree = "<group>"; };
 		4D9ABDC51E3BD2D100D18DBF /* BeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeerCell.swift; path = Views/BeerCell.swift; sourceTree = "<group>"; };
 		4D9ABDC71E3BD2E200D18DBF /* TradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TradeCell.swift; path = Views/TradeCell.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				76DB38F21E3ED277001CF297 /* UIImage+Growler.swift */,
 				4D3A92791E4E66D600AF0AF2 /* UIImageView+Growler.swift */,
 				768376161E63AC9900E1D570 /* UIColor+Growler.swift */,
+				4D59DBE51E6608DA0014D629 /* UIAlertController+Growler.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				768376171E63AC9900E1D570 /* UIColor+Growler.swift in Sources */,
 				4D2F67541E32B707005D4D0B /* Constants.swift in Sources */,
 				76DB38F31E3ED277001CF297 /* UIImage+Growler.swift in Sources */,
+				4D59DBE61E6608DA0014D629 /* UIAlertController+Growler.swift in Sources */,
 				4D9ABDC81E3BD2E200D18DBF /* TradeCell.swift in Sources */,
 				768376151E63A64A00E1D570 /* UIButton+Growler.swift in Sources */,
 				4D9ABDD11E3BEE2500D18DBF /* BeerListViewModel.swift in Sources */,

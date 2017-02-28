@@ -51,9 +51,9 @@ struct Style {
     // MARK: Theme UI
     static func themeUI() {
         themeUINavigationBar()
+        themeUITabBar()
         themeUISegmentedControl()
         themeUITextField()
-        themeTabBar()
     }
     
     static private func themeUINavigationBar() {
@@ -71,19 +71,7 @@ struct Style {
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "Back")
     }
     
-    static private func themeUISegmentedControl() {
-        UISegmentedControl.appearance().tintColor = Style.brown
-        let attr = NSDictionary(object: Style.regularSansFont(withSize: 14.0), forKey: NSFontAttributeName as NSCopying)
-        UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
-    }
-    
-    static private func themeUITextField() {
-        UITextField.appearance().tintColor = Style.orange
-        UITextField.appearance().font = Style.lightSansFont(withSize: 18)
-        Style.addBottomBorder(toLayer: UITextField.appearance().layer, onFrame: UITextField.appearance().frame, color: Style.gray.cgColor)
-    }
-    
-    static private func themeTabBar() {
+    static private func themeUITabBar() {
         UITabBar.appearance().backgroundImage = UIImage()
         UITabBar.appearance().shadowImage = UIImage.image(fromColor: Style.grayLight)
         UITabBar.appearance().isTranslucent = false
@@ -99,6 +87,18 @@ struct Style {
         ]
         UITabBarItem.appearance().setTitleTextAttributes(attrsNormal, for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes(attrsSelected, for: .selected)
+    }
+    
+    static private func themeUISegmentedControl() {
+        UISegmentedControl.appearance().tintColor = Style.brown
+        let attr = NSDictionary(object: Style.regularSansFont(withSize: 14.0), forKey: NSFontAttributeName as NSCopying)
+        UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
+    }
+    
+    static private func themeUITextField() {
+        UITextField.appearance().tintColor = Style.orange
+        UITextField.appearance().font = Style.lightSansFont(withSize: 18)
+        Style.addBottomBorder(toLayer: UITextField.appearance().layer, onFrame: UITextField.appearance().frame, color: Style.gray.cgColor)
     }
     
     // MARK: Helpers

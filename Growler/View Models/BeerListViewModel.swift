@@ -29,8 +29,8 @@ class BeerListViewModel {
             case Cellar.wishlist.rawValue: filterType = "want"; break
             default: break
         }
-        QueryClient.sharedClient().fetch(query: UserBeersQuery(filterType: filterType)){ [weak self] (result, error) in
-            guard let userBeers = result?.data?.userBeers as? [UserBeersQuery.Data.UserBeer] else { return }
+        QueryClient.sharedClient().fetch(query: UserBeersQuery(filterType: filterType)) { [weak self] result, error in
+            guard let userBeers = result?.data?.userBeers as? [UserBeersQuery.Data.UserBeer] else { dump(error); return }
             self?.userBeers = userBeers
         }
     }
