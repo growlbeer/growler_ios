@@ -27,7 +27,7 @@ class BeerCell: UICollectionViewCell {
         styleView()
         setupImageView(withURL: viewModel.beerMediumImage())
         setupNameLabel(withName: viewModel.beerName())
-        setupBrewLabel(withBreweryName: viewModel.beerBrewer())
+        setupBrewerLabel(withBreweryName: viewModel.beerBrewer())
         setupDescriptionLabel(withDescription: viewModel.beerDescription())
     }
     
@@ -48,7 +48,7 @@ class BeerCell: UICollectionViewCell {
         layout(nameLabel: nameLabel)
     }
     
-    private func setupBrewLabel(withBreweryName name: String) {
+    private func setupBrewerLabel(withBreweryName name: String) {
         brewerLabel.text = name
         brewerLabel.font = Style.lightSansFont(withSize: 16)
         brewerLabel.numberOfLines = 1
@@ -73,7 +73,7 @@ class BeerCell: UICollectionViewCell {
     
     private func layout(nameLabel label: UILabel) {
         label.autoPinEdge(.leading, to: .trailing, of: imageView, withOffset: 10)
-        label.autoPinEdge(.trailing, to: .trailing, of: self, withOffset: 10)
+        label.autoPinEdge(.trailing, to: .trailing, of: self, withOffset: -10)
         label.autoPinEdge(.top, to: .top, of: self, withOffset: 10)
     }
     
@@ -84,10 +84,10 @@ class BeerCell: UICollectionViewCell {
     }
     
     private func layout(descriptionLabel label: UILabel) {
-        label.autoPinEdge(.leading, to: .leading, of: nameLabel)
-        label.autoPinEdge(.trailing, to: .trailing, of: nameLabel)
+        label.autoPinEdge(.leading, to: .leading, of: brewerLabel)
+        label.autoPinEdge(.trailing, to: .trailing, of: brewerLabel)
         label.autoPinEdge(.top, to: .bottom, of: brewerLabel)
-        label.autoPinEdge(.bottom, to: .bottom, of: self, withOffset: 10)
+        label.autoPinEdge(.bottom, to: .bottom, of: imageView, withOffset: -10)
     }
     
     override func prepareForReuse() {

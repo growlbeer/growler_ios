@@ -20,12 +20,17 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let cellarVC    = UINavigationController(rootViewController: CellarTabViewController())
         let tradesVC    = UINavigationController(rootViewController: TradesTabViewController())
         let beersVC     = UINavigationController(rootViewController: BeersTabViewController())
-        let profileVC   = UINavigationController(rootViewController: ProfileTabViewController()) 
+        let profileVC   = UINavigationController(rootViewController: ProfileTabViewController())
         
-        let cellarBarItem   = UITabBarItem(title: CellarTabViewController.title(), image: nil, selectedImage: nil)
-        let tradesBarItem   = UITabBarItem(title: TradesTabViewController.title(), image: nil, selectedImage: nil)
-        let beersBarItem    = UITabBarItem(title: BeersTabViewController.title(), image: nil, selectedImage: nil)
-        let profileBarItem  = UITabBarItem(title: ProfileTabViewController.title(), image: nil, selectedImage: nil)
+        let cellarImage  = UIImage(named: "Cellar")
+        let tradesImage  = UIImage(named: "Trade")
+        let beersImage   = UIImage(named: "Search")
+        let profileImage = UIImage(named: "Profile")
+        
+        let cellarBarItem   = UITabBarItem(title: CellarTabViewController.title(), image: cellarImage, selectedImage: cellarImage)
+        let tradesBarItem   = UITabBarItem(title: TradesTabViewController.title(), image: tradesImage, selectedImage: tradesImage)
+        let beersBarItem    = UITabBarItem(title: BeersTabViewController.title(), image: beersImage, selectedImage: beersImage)
+        let profileBarItem  = UITabBarItem(title: ProfileTabViewController.title(), image: profileImage, selectedImage: profileImage)
         
         cellarVC.tabBarItem     = cellarBarItem
         tradesVC.tabBarItem     = tradesBarItem
