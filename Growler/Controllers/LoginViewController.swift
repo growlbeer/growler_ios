@@ -38,11 +38,17 @@ class LoginViewController: UIViewController {
     fileprivate func setupView() {
         title = "Log In"
         view.backgroundColor = Style.white
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        Style.addBottomBorder(toLayer: usernameField.layer, onFrame: usernameField.frame, color: Style.gray.cgColor)
+        Style.addBottomBorder(toLayer: passwordField.layer, onFrame: passwordField.frame, color: Style.gray.cgColor)
         setupCloseButton()
         setupUsernameField()
         setupPassworldField()
         setupSubmitButton()
     }
+    
+    @objc fileprivate func dismissKeyboard() { view.endEditing(true) }
     
     fileprivate func setupCloseButton() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Close"), style: .plain, target: self, action: #selector(close))
@@ -53,6 +59,8 @@ class LoginViewController: UIViewController {
         usernameField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         usernameField.placeholder = "Username"
         usernameField.autocapitalizationType = .none
+        usernameField.autocorrectionType = .no
+        usernameField.returnKeyType = .next
         view.addSubview(usernameField)
         layoutUsernameField()
     }
@@ -62,7 +70,9 @@ class LoginViewController: UIViewController {
         passwordField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         passwordField.placeholder = "Password"
         passwordField.autocapitalizationType = .none
+        passwordField.autocorrectionType = .no
         passwordField.isSecureTextEntry = true
+        passwordField.returnKeyType = .go
         view.addSubview(passwordField)
         layoutPasswordField()
     }
@@ -80,11 +90,11 @@ class LoginViewController: UIViewController {
     }
     
     fileprivate func layoutUsernameField() {
-        usernameField.autoPinEdgesToSuperviewEdges(with: UIEdgeInsetsMake(40, 20, 0, 40), excludingEdge: .bottom)
+        usernameField.autoPinEdgesToSuperviewEdges(with: UIEdgeInsetsMake(60, 20, 0, 0), excludingEdge: .bottom)
     }
     
     fileprivate func layoutPasswordField() {
-        passwordField.autoPinEdge(.top, to: .bottom, of: usernameField, withOffset: 40)
+        passwordField.autoPinEdge(.top, to: .bottom, of: usernameField, withOffset: 30)
         passwordField.autoPinEdge(.leading, to: .leading, of: usernameField)
         passwordField.autoPinEdge(.trailing, to: .trailing, of: usernameField)
     }
@@ -119,5 +129,15 @@ extension LoginViewController: UITextFieldDelegate {
         guard let userText = usernameField.text, userText.characters.count > 0,
             let passwordText = passwordField.text, passwordText.characters.count > 0 else { submitButton.isEnabled = false; return }
         submitButton.isEnabled = true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameField {
+            passwordField.becomeFirstResponder()
+        } else if textField == passwordField {
+            textField.resignFirstResponder()
+            login(withUsername: usernameField.text, password: passwordField.text)
+        }
+        return true
     }
 }

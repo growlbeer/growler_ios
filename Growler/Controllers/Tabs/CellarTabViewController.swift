@@ -14,6 +14,7 @@ class CellarTabViewController: UIViewController {
     let beerListVC = BeerListViewController(viewModel: BeerListViewModel())
     let segControl = UISegmentedControl(items: ["All", "For Trade", "Wishlist"])
     let defaults = UserDefaults.standard
+    var unauthedView: UnauthorizedView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,15 +35,16 @@ class CellarTabViewController: UIViewController {
     }
     
     fileprivate func configureAuthenticationState() {
-        print("#configureAuhenticatioNState")
         guard let _ = defaults.object(forKey: Constants.kUserAuthTokenKey) else { showUnauthorizedView(); return }
+        unauthedView?.removeFromSuperview()
         setupBeerList()
     }
     
     fileprivate func showUnauthorizedView() {
-        let unauthedView = UnauthorizedView(alert: "To start adding beers to your cellar you must create an account",
-                            loginHandler: { [weak self] _ in LoginViewController.showLogin(withNavigationController: self?.navigationController) },
-                            signupHandler: { _ in print("signupTapped") })
+        unauthedView = UnauthorizedView(alert: "To start adding beers to your cellar you must create an account",
+                                        loginHandler: { [weak self] _ in LoginViewController.showLogin(withNavigationController: self?.navigationController) },
+                                        signupHandler: { _ in print("signupTapped") })
+        guard let unauthedView = unauthedView else { return }
         view.addSubview(unauthedView)
         unauthedView.autoPinEdgesToSuperviewEdges()
     }
