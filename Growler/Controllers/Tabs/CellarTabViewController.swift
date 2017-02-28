@@ -34,16 +34,17 @@ class CellarTabViewController: UIViewController {
     }
     
     fileprivate func configureAuthenticationState() {
-//        guard let _ = defaults.object(forKey: Constants.kUserAuthTokenKey) else { showUnauthorizedView(); return }
+        print("#configureAuhenticatioNState")
+        guard let _ = defaults.object(forKey: Constants.kUserAuthTokenKey) else { showUnauthorizedView(); return }
         setupBeerList()
     }
     
     fileprivate func showUnauthorizedView() {
-//        let unauthedView = UnauthorizedView(alert: "To start adding beers to your cellar you must create an account",
-//                            loginHandler: { [weak self] _ in LoginViewController.showLogin(withNavigationController: self?.navigationController) },
-//                            signupHandler: { _ in print("signupTapped") })
-//        view.addSubview(unauthedView)
-//        unauthedView.autoPinEdgesToSuperviewEdges()
+        let unauthedView = UnauthorizedView(alert: "To start adding beers to your cellar you must create an account",
+                            loginHandler: { [weak self] _ in LoginViewController.showLogin(withNavigationController: self?.navigationController) },
+                            signupHandler: { _ in print("signupTapped") })
+        view.addSubview(unauthedView)
+        unauthedView.autoPinEdgesToSuperviewEdges()
     }
     
     fileprivate func setupSegmentedControl() {

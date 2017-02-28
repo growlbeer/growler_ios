@@ -12,10 +12,12 @@ import PureLayout
 class LoginViewController: UIViewController {
     
     static let sharedInstance = LoginViewController()
+    let defaults = UserDefaults.standard
     
     fileprivate let usernameField = UITextField()
     fileprivate let passwordField = UITextField()
     fileprivate let submitButton = UIButton()
+    
     
     static func showLogin(withNavigationController navVC: UINavigationController?) {
         guard let navVC = navVC else { return }
@@ -83,7 +85,11 @@ class LoginViewController: UIViewController {
     
     fileprivate func login(withUsername username: String?, password: String?) {
         guard let username = username, let password = password else { return /* handle error */ }
-        // handle login
+        QueryClient.sharedClient().perform(mutation: LoginMutation(input: LoginInput(email: username, password: password))) { (result, error) in
+            let authToken = result?.data?.login?.user?.fragments.userDetails.authToken
+            self.defaults.set(authToken, forKey: Constants.kUserAuthTokenKey)
+            self.close()
+        }
     }
     
     @objc fileprivate func close() { dismiss(animated: true, completion: nil) }

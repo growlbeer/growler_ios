@@ -45,6 +45,8 @@
 		76DB38EF1E3EC5E4001CF297 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76DB38E81E3EC5E4001CF297 /* Raleway-Bold.ttf */; };
 		76DB38F01E3EC5E4001CF297 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76DB38E91E3EC5E4001CF297 /* Raleway-Light.ttf */; };
 		76DB38F31E3ED277001CF297 /* UIImage+Growler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB38F21E3ED277001CF297 /* UIImage+Growler.swift */; };
+		A8724F581E653DAF00182B58 /* LoginMutation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = A8724F571E653DAF00182B58 /* LoginMutation.graphql */; };
+		A8724F5A1E6541AB00182B58 /* Fragments.graphql in Resources */ = {isa = PBXBuildFile; fileRef = A8724F591E6541AB00182B58 /* Fragments.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		76DB38E81E3EC5E4001CF297 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		76DB38E91E3EC5E4001CF297 /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
 		76DB38F21E3ED277001CF297 /* UIImage+Growler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Growler.swift"; path = "Utilities/Extensions/UIImage+Growler.swift"; sourceTree = "<group>"; };
+		A8724F571E653DAF00182B58 /* LoginMutation.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LoginMutation.graphql; path = Queries/LoginMutation.graphql; sourceTree = "<group>"; };
+		A8724F591E6541AB00182B58 /* Fragments.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fragments.graphql; path = Queries/Fragments.graphql; sourceTree = "<group>"; };
 		C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Growler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E67163784B7D09A3C51E99C5 /* Pods-Growler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Growler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Growler/Pods-Growler.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -284,6 +288,8 @@
 				4D9ABDCA1E3BEB7800D18DBF /* TradesQuery.graphql */,
 				4D9ABDCB1E3BEB7800D18DBF /* WantedQuery.graphql */,
 				4D926F401E31796400686AAC /* BeersQuery.graphql */,
+				A8724F571E653DAF00182B58 /* LoginMutation.graphql */,
+				A8724F591E6541AB00182B58 /* Fragments.graphql */,
 			);
 			name = Queries;
 			sourceTree = "<group>";
@@ -435,10 +441,12 @@
 				76DB38EA1E3EC5E4001CF297 /* LibreBaskerville-Bold.ttf in Resources */,
 				27D552221E46AB670013E258 /* UserBeersQuery.graphql in Resources */,
 				4D464D3A1E25873800443D3B /* LaunchScreen.storyboard in Resources */,
+				A8724F5A1E6541AB00182B58 /* Fragments.graphql in Resources */,
 				76DB38EC1E3EC5E4001CF297 /* LibreBaskerville-Regular.ttf in Resources */,
 				4D9ABDCC1E3BEB7800D18DBF /* CellarQuery.graphql in Resources */,
 				76DB38EB1E3EC5E4001CF297 /* LibreBaskerville-Italic.ttf in Resources */,
 				76DB38EF1E3EC5E4001CF297 /* Raleway-Bold.ttf in Resources */,
+				A8724F581E653DAF00182B58 /* LoginMutation.graphql in Resources */,
 				4D9ABDCE1E3BEB7800D18DBF /* WantedQuery.graphql in Resources */,
 				76DB38F01E3EC5E4001CF297 /* Raleway-Light.ttf in Resources */,
 				4D926F411E31796400686AAC /* BeersQuery.graphql in Resources */,
