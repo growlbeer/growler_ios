@@ -63,16 +63,11 @@ public final class BeerSearchQuery: GraphQLQuery {
     "query BeerSearch($q: String) {" +
     "  search(q: $q) {" +
     "    beers {" +
-    "      id" +
-    "      name" +
-    "      description" +
-    "      medium_image" +
-    "      breweries {" +
-    "        name" +
-    "      }" +
+    "      ...BeerDetails" +
     "    }" +
     "  }" +
     "}"
+  public static let queryDocument = operationDefinition.appending(BeerDetails.fragmentDefinition).appending(BreweryDetails.fragmentDefinition)
 
   public let q: String?
 
@@ -101,27 +96,16 @@ public final class BeerSearchQuery: GraphQLQuery {
 
       public struct Beer: GraphQLMappable {
         public let __typename = "Beer"
-        public let id: GraphQLID
-        public let name: String?
-        public let description: String?
-        public let mediumImage: String?
-        public let breweries: [Brewery?]?
+
+        public let fragments: Fragments
 
         public init(reader: GraphQLResultReader) throws {
-          id = try reader.value(for: Field(responseName: "id"))
-          name = try reader.optionalValue(for: Field(responseName: "name"))
-          description = try reader.optionalValue(for: Field(responseName: "description"))
-          mediumImage = try reader.optionalValue(for: Field(responseName: "medium_image"))
-          breweries = try reader.optionalList(for: Field(responseName: "breweries"))
+          let beerDetails = try BeerDetails(reader: reader)
+          fragments = Fragments(beerDetails: beerDetails)
         }
 
-        public struct Brewery: GraphQLMappable {
-          public let __typename = "Brewery"
-          public let name: String?
-
-          public init(reader: GraphQLResultReader) throws {
-            name = try reader.optionalValue(for: Field(responseName: "name"))
-          }
+        public struct Fragments {
+          public let beerDetails: BeerDetails
         }
       }
     }

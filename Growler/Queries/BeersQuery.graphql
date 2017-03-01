@@ -7,13 +7,7 @@ query Beer($id: ID!) {
 query BeerSearch($q: String) {
     search(q: $q) {
         beers {
-            id
-            name
-            description
-            medium_image
-            breweries {
-                name
-            }
+            ...BeerDetails
         }
     }
 }

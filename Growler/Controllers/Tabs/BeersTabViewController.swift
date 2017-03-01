@@ -9,10 +9,17 @@
 import UIKit
 
 class BeersTabViewController: UIViewController {
+    
+    var beers: [BeerSearchQuery.Data.Search.Beer?] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        search(keywords: "candy")
     }
     
     static func title() -> String { return "Beers" }
@@ -20,6 +27,14 @@ class BeersTabViewController: UIViewController {
     fileprivate func setupView() {
         title = BeersTabViewController.title()
         view.backgroundColor = Style.white
+    }
+    
+    func search(keywords: String) {
+        QueryClient.sharedClient().fetch(query: BeerSearchQuery(q: keywords)) { [weak self] result, error in
+            guard let beers = result?.data?.search?.beers else { dump(error); return }
+            self?.beers = beers
+            print(beers)
+        }
     }
 
 }
