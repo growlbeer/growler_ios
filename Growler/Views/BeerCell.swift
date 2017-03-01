@@ -60,7 +60,7 @@ class BeerCell: UICollectionViewCell {
     private func setupDescriptionLabel(withDescription desc: String) {
         descriptionLabel.text = desc
         descriptionLabel.font = Style.regularSerifFont(withSize: 12)
-        descriptionLabel.numberOfLines = 0
+        descriptionLabel.numberOfLines = 3
         descriptionLabel.lineBreakMode = .byTruncatingTail
         addSubview(descriptionLabel)
         layout(descriptionLabel: descriptionLabel)
@@ -86,8 +86,7 @@ class BeerCell: UICollectionViewCell {
     private func layout(descriptionLabel label: UILabel) {
         label.autoPinEdge(.leading, to: .leading, of: brewerLabel)
         label.autoPinEdge(.trailing, to: .trailing, of: brewerLabel)
-        label.autoPinEdge(.top, to: .bottom, of: brewerLabel)
-        label.autoPinEdge(.bottom, to: .bottom, of: imageView, withOffset: -10)
+        label.autoPinEdge(.top, to: .bottom, of: brewerLabel, withOffset: 5)
     }
     
     override func prepareForReuse() {
