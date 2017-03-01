@@ -8,8 +8,8 @@ fragment BeerDetails on Beer {
     name
     description
     medium_image
-        breweries {
-            ...BreweryDetails
+    breweries {
+        ...BreweryDetails
     }
 }
 

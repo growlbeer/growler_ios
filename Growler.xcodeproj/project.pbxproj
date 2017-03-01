@@ -48,6 +48,7 @@
 		76DB38F31E3ED277001CF297 /* UIImage+Growler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB38F21E3ED277001CF297 /* UIImage+Growler.swift */; };
 		A8724F581E653DAF00182B58 /* LoginMutation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = A8724F571E653DAF00182B58 /* LoginMutation.graphql */; };
 		A8724F5A1E6541AB00182B58 /* Fragments.graphql in Resources */ = {isa = PBXBuildFile; fileRef = A8724F591E6541AB00182B58 /* Fragments.graphql */; };
+		A8E5494B1E663D5700255DA9 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E5494A1E663D5700255DA9 /* BeerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		76DB38F21E3ED277001CF297 /* UIImage+Growler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Growler.swift"; path = "Utilities/Extensions/UIImage+Growler.swift"; sourceTree = "<group>"; };
 		A8724F571E653DAF00182B58 /* LoginMutation.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LoginMutation.graphql; path = Queries/LoginMutation.graphql; sourceTree = "<group>"; };
 		A8724F591E6541AB00182B58 /* Fragments.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fragments.graphql; path = Queries/Fragments.graphql; sourceTree = "<group>"; };
+		A8E5494A1E663D5700255DA9 /* BeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeerViewController.swift; path = Controllers/BeerViewController.swift; sourceTree = "<group>"; };
 		C8DDA607DC878782F85DAF64 /* Pods_Growler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Growler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E67163784B7D09A3C51E99C5 /* Pods-Growler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Growler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Growler/Pods-Growler.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				27AC4E481E4AD2810095EB15 /* LoginViewController.swift */,
+				A8E5494A1E663D5700255DA9 /* BeerViewController.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				4D464D5E1E28341B00443D3B /* TradesTabViewController.swift in Sources */,
 				4D464D601E28342800443D3B /* BeersTabViewController.swift in Sources */,
 				4D464D591E25A1E300443D3B /* Style.swift in Sources */,
+				A8E5494B1E663D5700255DA9 /* BeerViewController.swift in Sources */,
 				768376171E63AC9900E1D570 /* UIColor+Growler.swift in Sources */,
 				4D2F67541E32B707005D4D0B /* Constants.swift in Sources */,
 				76DB38F31E3ED277001CF297 /* UIImage+Growler.swift in Sources */,

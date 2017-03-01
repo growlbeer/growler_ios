@@ -1,3 +1,9 @@
+query Beer($id: ID!) {
+    beer(id: $id) {
+        ...BeerDetails
+    }
+}
+
 query BeerSearch($q: String) {
     search(q: $q) {
         beers {

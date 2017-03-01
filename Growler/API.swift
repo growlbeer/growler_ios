@@ -15,6 +15,49 @@ public struct LoginInput: GraphQLMapConvertible {
   }
 }
 
+public final class BeerQuery: GraphQLQuery {
+  public static let operationDefinition =
+    "query Beer($id: ID!) {" +
+    "  beer(id: $id) {" +
+    "    ...BeerDetails" +
+    "  }" +
+    "}"
+  public static let queryDocument = operationDefinition.appending(BeerDetails.fragmentDefinition).appending(BreweryDetails.fragmentDefinition)
+
+  public let id: GraphQLID
+
+  public init(id: GraphQLID) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLMappable {
+    public let beer: Beer?
+
+    public init(reader: GraphQLResultReader) throws {
+      beer = try reader.optionalValue(for: Field(responseName: "beer"))
+    }
+
+    public struct Beer: GraphQLMappable {
+      public let __typename = "Beer"
+
+      public let fragments: Fragments
+
+      public init(reader: GraphQLResultReader) throws {
+        let beerDetails = try BeerDetails(reader: reader)
+        fragments = Fragments(beerDetails: beerDetails)
+      }
+
+      public struct Fragments {
+        public let beerDetails: BeerDetails
+      }
+    }
+  }
+}
+
 public final class BeerSearchQuery: GraphQLQuery {
   public static let operationDefinition =
     "query BeerSearch($q: String) {" +
